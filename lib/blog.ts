@@ -120,6 +120,7 @@ export function markdownToHtml(markdown: string) {
   const lines = markdown.split(/\r?\n/);
   const html: string[] = [];
   let listItems: string[] = [];
+  let orderedItems: string[] = [];
 
   function flushList() {
     if (!listItems.length) return;
@@ -127,20 +128,49 @@ export function markdownToHtml(markdown: string) {
     listItems = [];
   }
 
+  function flushOrderedList() {
+    if (!orderedItems.length) return;
+    html.push(`<ol>${orderedItems.map((item) => `<li>${item}</li>`).join("")}</ol>`);
+    orderedItems = [];
+  }
+
+  function flushAllLists() {
+    flushList();
+    flushOrderedList();
+  }
+
   for (const line of lines) {
     const trimmed = line.trim();
 
     if (!trimmed) {
-      flushList();
+      flushAllLists();
       continue;
     }
 
     if (trimmed.startsWith("- ")) {
+      flushOrderedList();
       listItems.push(renderInline(trimmed.slice(2)));
       continue;
     }
 
-    flushList();
+    const orderedMatch = trimmed.match(/^\d+\.\s+(.+)$/);
+    if (orderedMatch) {
+      flushList();
+      orderedItems.push(renderInline(orderedMatch[1]));
+      continue;
+    }
+
+    flushAllLists();
+
+    if (trimmed === "---") {
+      html.push("<hr />");
+      continue;
+    }
+
+    if (trimmed.startsWith("> ")) {
+      html.push(`<blockquote><p>${renderInline(trimmed.slice(2))}</p></blockquote>`);
+      continue;
+    }
 
     if (trimmed.startsWith("### ")) {
       html.push(`<h3>${renderInline(trimmed.slice(4))}</h3>`);
@@ -153,7 +183,7 @@ export function markdownToHtml(markdown: string) {
     }
   }
 
-  flushList();
+  flushAllLists();
   return html.join("\n");
 }
 

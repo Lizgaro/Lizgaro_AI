@@ -18,14 +18,25 @@ export function BlogPreview() {
         {posts.length ? (
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {posts.map((post) => (
-              <article key={post.slug} className="rounded-[2rem] border border-white/10 bg-surface p-6">
-                <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
-                <h3 className="mt-5 text-2xl font-semibold leading-tight text-text">{post.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-muted">{post.description}</p>
-                <a href={`/blog/${post.slug}`} className="mt-6 inline-block text-sm font-semibold text-lime">
-                  Читать
-                </a>
-              </article>
+              <a
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block rounded-[2rem] border border-white/10 bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-lime/40 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              >
+                <article>
+                  <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
+                  <h3 className="mt-5 text-2xl font-semibold leading-tight text-text group-hover:text-lime">
+                    {post.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-6 text-muted">{post.description}</p>
+                  <div className="mt-6 flex items-center justify-between gap-4 text-sm font-semibold text-lime">
+                    <span>Открыть статью</span>
+                    <span aria-hidden="true" className="transition group-hover:translate-x-1">
+                      -&gt;
+                    </span>
+                  </div>
+                </article>
+              </a>
             ))}
           </div>
         ) : (

@@ -77,18 +77,44 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <Header />
       <main className="px-4 pb-20 pt-32 sm:pt-36">
-        <article className="mx-auto max-w-4xl">
-          <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
-          <h1 className="mt-5 font-display text-5xl font-black uppercase leading-[0.9] text-text sm:text-7xl">
-            {post.title}
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-muted">{post.description}</p>
-          <div className="mt-6 flex flex-wrap gap-2 text-sm text-muted">
-            <span>{post.date}</span>
-            <span>/</span>
-            <span>{post.readingTime}</span>
+        <article className="mx-auto max-w-5xl">
+          <header className="rounded-[2.5rem] border border-white/10 bg-surface p-6 sm:p-8 lg:p-10">
+            <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
+            <h1 className="mt-5 max-w-4xl font-display text-5xl font-black uppercase leading-[0.9] text-text sm:text-7xl">
+              {post.title}
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">{post.description}</p>
+            <div className="mt-6 flex flex-wrap gap-2 text-sm text-muted">
+              <span>{post.date}</span>
+              <span>/</span>
+              <span>{post.readingTime}</span>
+              <span>/</span>
+              <span>{post.author}</span>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {post.tags.slice(0, 6).map((tag) => (
+                <a
+                  key={tag}
+                  href={`/tags/${encodeURIComponent(tag)}`}
+                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-muted transition hover:border-lime/40 hover:text-lime"
+                >
+                  {tag}
+                </a>
+              ))}
+            </div>
+          </header>
+
+          {post.ogImage ? (
+            <img
+              src={post.ogImage}
+              alt={`Обложка статьи: ${post.title}`}
+              className="mt-6 aspect-[1200/630] w-full rounded-[2rem] border border-white/10 object-cover"
+            />
+          ) : null}
+
+          <div className="mt-12 rounded-[2rem] border border-white/10 bg-surface/50 p-5 sm:p-8">
+            <div className="markdown-content" dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
-          <div className="mt-10 markdown-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </main>
