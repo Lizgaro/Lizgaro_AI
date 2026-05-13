@@ -9,8 +9,8 @@ export function Projects() {
         <SectionHeading
           id="projects"
           label="03 / Projects"
-          title="Проекты без лишней внутренней кухни"
-          description="Сначала то, что развиваю сейчас. Ниже - работы и упаковки, которые показывают мой подход к сайтам, AI, партнёрствам и системам."
+          title="Проекты и кейсы"
+          description="Активные проекты и работы, по которым видно мой подход к сайтам, AI, партнёрствам и системам."
         />
 
         <div className="mt-12">
@@ -18,7 +18,7 @@ export function Projects() {
             <h3 className="font-display text-3xl font-black uppercase leading-none text-text sm:text-4xl">
               Что развиваю сейчас
             </h3>
-            <span className="hidden font-mono text-xs uppercase text-lime sm:block">Active layer</span>
+            <span className="hidden font-mono text-xs uppercase text-lime sm:block">Active projects</span>
           </div>
           <div className="grid gap-4 lg:grid-cols-2">
             {currentProjects.map((project) => (

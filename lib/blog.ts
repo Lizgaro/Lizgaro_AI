@@ -101,6 +101,21 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
+function renderInline(markdown: string) {
+  let html = escapeHtml(markdown);
+
+  html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
+  html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_match, label: string, url: string) => {
+    const safeLabel = label;
+    const safeUrl = url.startsWith("http") || url.startsWith("/") || url.startsWith("mailto:") ? url : "#";
+    const externalAttrs = safeUrl.startsWith("http") ? ' target="_blank" rel="noreferrer"' : "";
+    return `<a href="${safeUrl}"${externalAttrs}>${safeLabel}</a>`;
+  });
+
+  return html;
+}
+
 export function markdownToHtml(markdown: string) {
   const lines = markdown.split(/\r?\n/);
   const html: string[] = [];
@@ -121,20 +136,20 @@ export function markdownToHtml(markdown: string) {
     }
 
     if (trimmed.startsWith("- ")) {
-      listItems.push(escapeHtml(trimmed.slice(2)));
+      listItems.push(renderInline(trimmed.slice(2)));
       continue;
     }
 
     flushList();
 
     if (trimmed.startsWith("### ")) {
-      html.push(`<h3>${escapeHtml(trimmed.slice(4))}</h3>`);
+      html.push(`<h3>${renderInline(trimmed.slice(4))}</h3>`);
     } else if (trimmed.startsWith("## ")) {
-      html.push(`<h2>${escapeHtml(trimmed.slice(3))}</h2>`);
+      html.push(`<h2>${renderInline(trimmed.slice(3))}</h2>`);
     } else if (trimmed.startsWith("# ")) {
-      html.push(`<h1>${escapeHtml(trimmed.slice(2))}</h1>`);
+      html.push(`<h1>${renderInline(trimmed.slice(2))}</h1>`);
     } else {
-      html.push(`<p>${escapeHtml(trimmed)}</p>`);
+      html.push(`<p>${renderInline(trimmed)}</p>`);
     }
   }
 

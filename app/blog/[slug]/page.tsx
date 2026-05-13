@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return {
-      title: "Статья не найдена — Артём Лизгаро"
+      title: "Статья не найдена - Артём Лизгаро"
     };
   }
 

@@ -33,7 +33,7 @@ export function Hero() {
           </div>
           <p className="mt-4 max-w-xl text-sm leading-6 text-muted">{siteConfig.hero.support}</p>
 
-          <div className="mt-8 rounded-[1.5rem] border border-lime/20 bg-lime/[0.04] p-4 shadow-glow sm:p-5">
+          <div className="motion-card mt-8 rounded-[1.5rem] border border-lime/20 bg-lime/[0.04] p-4 shadow-glow sm:p-5">
             <div className="flex items-center justify-between border-b border-white/10 pb-3 font-mono text-[11px] uppercase text-muted">
               <span>Monetization path</span>
               <span className="text-lime">MVP mode</span>

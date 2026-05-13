@@ -21,7 +21,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
 
   if (compact) {
     return (
-      <article className="rounded-[1.5rem] border border-white/10 bg-surface p-5 transition hover:border-lime/30">
+      <article className="rounded-[1.5rem] border border-white/10 bg-surface p-5 transition duration-300 hover:-translate-y-1 hover:border-lime/30 hover:shadow-glow">
         <div className="flex flex-wrap items-center gap-2">
           <span className={`rounded-full border px-3 py-1 font-mono text-[11px] uppercase ${statusStyles[project.status]}`}>
             {project.statusLabel}
@@ -55,7 +55,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
 
   return (
     <article
-      className={`group relative isolate flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-6 transition hover:border-lime/40 sm:p-8 ${
+      className={`group relative isolate flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-lime/40 hover:shadow-glow sm:p-8 ${
         project.featured ? "lg:col-span-2" : ""
       }`}
     >

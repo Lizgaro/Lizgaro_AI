@@ -8,10 +8,11 @@ export const siteConfig = {
   fallbackCtaHref: "https://t.me/Artem_Liz",
   contacts: {
     telegram: "https://t.me/Artem_Liz",
-    email: ""
+    email: "lizgaro13@gmail.com"
   },
   socials: [
     { label: "Telegram", href: "https://t.me/Artem_Liz" },
+    { label: "Email", href: "mailto:lizgaro13@gmail.com" },
     { label: "X / Twitter", href: "" },
     { label: "Instagram / Threads", href: "" },
     { label: "GitHub", href: "" }
