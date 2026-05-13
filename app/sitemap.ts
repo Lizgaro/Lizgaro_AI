@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getCategories, getPublishedPosts, getTags } from "@/lib/blog";
+import { projectDetails } from "@/data/projectDetails";
 import { siteConfig } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7
     },
+    ...projectDetails.map((project) => ({
+      url: `${baseUrl}/projects/${project.slug}`,
+      lastModified: siteUpdatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.65
+    })),
     ...posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
       lastModified: new Date(post.updatedAt || post.date),

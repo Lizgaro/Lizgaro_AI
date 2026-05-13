@@ -74,31 +74,6 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         </h3>
         {project.hook ? <p className="mt-5 max-w-3xl text-lg leading-8 text-lime">{project.hook}</p> : null}
         <p className="mt-5 max-w-4xl text-base leading-7 text-muted sm:text-lg sm:leading-8">{project.shortDescription}</p>
-
-        {project.featured && (project.problem || project.solution || project.valueForUser) ? (
-          <div className="mt-7 grid gap-4 lg:grid-cols-3">
-            {project.problem ? (
-              <div className="border-t border-white/10 pt-4">
-                <p className="font-mono text-xs uppercase text-lime">Проблема</p>
-                <p className="mt-3 text-sm leading-6 text-muted">{project.problem}</p>
-              </div>
-            ) : null}
-            {project.solution ? (
-              <div className="border-t border-white/10 pt-4">
-                <p className="font-mono text-xs uppercase text-lime">Решение</p>
-                <p className="mt-3 text-sm leading-6 text-muted">{project.solution}</p>
-              </div>
-            ) : null}
-            {project.valueForUser ? (
-              <div className="border-t border-white/10 pt-4">
-                <p className="font-mono text-xs uppercase text-lime">Польза</p>
-                <p className="mt-3 text-sm leading-6 text-muted">{project.valueForUser}</p>
-              </div>
-            ) : null}
-          </div>
-        ) : project.valueForUser ? (
-          <p className="mt-5 max-w-3xl text-sm leading-6 text-muted">{project.valueForUser}</p>
-        ) : null}
       </div>
 
       <div className="mt-7">

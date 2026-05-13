@@ -9,6 +9,8 @@ ${siteConfig.seo.description}
 
 ## Основные разделы
 - Главная: ${siteConfig.siteUrl}
+- Life OS: ${siteConfig.siteUrl}/projects/life-os
+- Личная ОС роста: ${siteConfig.siteUrl}/projects/growth-os
 - Блог: ${siteConfig.siteUrl}/blog
 - RSS: ${siteConfig.siteUrl}/rss.xml
 - Sitemap: ${siteConfig.siteUrl}/sitemap.xml

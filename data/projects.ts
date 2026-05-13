@@ -58,6 +58,8 @@ export const projects: Project[] = [
     valueForUser:
       "AI быстрее понимает задачу, точнее предлагает решения, помогает вести проекты и превращает хаос идей в конкретные действия.",
     tags: ["Life OS", "AI Agents", "Context", "Codex"],
+    ctaLabel: "Подробнее",
+    ctaUrl: "/projects/life-os",
     secondaryCtaLabel: "Хочу собрать свой AI-мозг",
     featured: true
   },
@@ -75,6 +77,8 @@ export const projects: Project[] = [
     valueForUser:
       "Не очередной трекер с галочками, а личная операционная система роста: записал мысль, понял себя, выбрал маленький шаг, сделал, увидел прогресс.",
     tags: ["Personal Growth", "Habits", "AI Mentors", "Focus"],
+    ctaLabel: "Подробнее",
+    ctaUrl: "/projects/growth-os",
     secondaryCtaLabel: "Обсудить продукт"
   },
   {

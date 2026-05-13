@@ -48,6 +48,9 @@ export function LifeOSSection() {
               <ButtonLink href={siteConfig.fallbackCtaHref} variant="ink" className="mt-8">
                 Хочу собрать свой AI-мозг
               </ButtonLink>
+              <ButtonLink href="/projects/life-os" variant="inkGhost" className="mt-3 sm:ml-3">
+                Подробнее
+              </ButtonLink>
             </div>
           </article>
 
@@ -69,6 +72,14 @@ export function LifeOSSection() {
                   {item}
                 </span>
               ))}
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/projects/growth-os" variant="secondary">
+                Подробнее
+              </ButtonLink>
+              <ButtonLink href={siteConfig.fallbackCtaHref} variant="ghost">
+                Обсудить продукт
+              </ButtonLink>
             </div>
           </article>
         </div>
