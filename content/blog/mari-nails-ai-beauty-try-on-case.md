@@ -14,7 +14,7 @@ tags:
   - визуальная примерка
 author: "Артём Лизгаро"
 readingTime: "5 мин"
-status: "draft"
+status: "published"
 seoTitle: "Mari Nails: AI-сайт для beauty-ниши и выбора маникюра"
 seoDescription: "Разбор проекта Mari Nails: как AI-сайт может помогать клиенту выбрать маникюр, мастеру быстрее понимать запрос и превращать beauty-услугу в понятный digital-продукт."
 ogImage: "/blog/mari-nails-ai-beauty-try-on-og.svg"
