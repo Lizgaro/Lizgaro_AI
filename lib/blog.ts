@@ -163,10 +163,15 @@ function calculateReadingTime(content: string) {
   return `${minutes} мин`;
 }
 
+function stripLeadingMarkdownTitle(content: string) {
+  return content.replace(/^#\s+.+\r?\n+/, "");
+}
+
 function normalizePost(fileName: string): BlogPost {
   const filePath = path.join(blogDirectory, fileName);
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = parseFrontmatter(raw);
+  const bodyContent = stripLeadingMarkdownTitle(content);
   const fallbackSlug = fileName.replace(/\.(md|mdx)$/i, "");
 
   return {
@@ -178,7 +183,7 @@ function normalizePost(fileName: string): BlogPost {
     category: String(data.category || "Без категории"),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     author: "Артём Лизгаро",
-    readingTime: data.readingTime ? String(data.readingTime) : calculateReadingTime(content),
+    readingTime: data.readingTime ? String(data.readingTime) : calculateReadingTime(bodyContent),
     status: data.status === "published" ? "published" : "draft",
     seoTitle: data.seoTitle ? String(data.seoTitle) : undefined,
     seoDescription: data.seoDescription ? String(data.seoDescription) : undefined,
@@ -189,8 +194,8 @@ function normalizePost(fileName: string): BlogPost {
       ? (String(data.sourceType) as BlogPostSourceType)
       : "manual",
     publishToSocial: data.publishToSocial === true,
-    content,
-    html: markdownToHtml(content)
+    content: bodyContent,
+    html: markdownToHtml(bodyContent)
   };
 }
 
