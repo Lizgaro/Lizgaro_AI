@@ -10,9 +10,9 @@ export function BlogPreview() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           id="blog"
-          label="08 / Blog"
-          title="Блог и будущие статьи"
-          description="Блог готовится как SEO/GEO-актив: статьи из разборов, фаз, голосовых заметок, проектов и исследований."
+          label="07 / Blog"
+          title="Блог"
+          description="Статьи о сайтах, Telegram-ботах, AI, монетизации, Life OS и создании продуктов."
         />
 
         {posts.length ? (
@@ -30,13 +30,12 @@ export function BlogPreview() {
           </div>
         ) : (
           <div className="mt-12 rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
-            <p className="font-display text-4xl font-black uppercase leading-none text-text sm:text-6xl">
-              Блог скоро появится.
+            <p className="font-display text-4xl font-black uppercase leading-none text-text sm:text-5xl">
+              Блог готовится.
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-              Здесь будут разборы о сайтах, Telegram-ботах, AI, монетизации, Life OS и управлении
-              проектами через фазы. Сейчас архитектура готовится, но реальные статьи не публикуются
-              без отдельного задания.
+              Здесь будут статьи о сайтах, Telegram-ботах, AI, монетизации, Life OS и создании продуктов. Публиковаться
+              будут только готовые материалы, а не сырые заметки.
             </p>
             <div className="mt-8">
               <ButtonLink href="/blog" variant="secondary">

@@ -5,16 +5,15 @@ import { getCategories, getPublishedPosts, getTags } from "@/lib/blog";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Блог — Артём Лизгаро",
+  title: "Блог - Артём Лизгаро",
   description:
-    "Будущие статьи Артёма Лизгаро о сайтах, Telegram-ботах, AI-маркетинге, монетизации, Life OS и управлении проектами через фазы.",
+    "Будущие статьи Артёма Лизгаро о сайтах, Telegram-ботах, AI, монетизации, Life OS и создании продуктов.",
   alternates: {
     canonical: `${siteConfig.siteUrl}/blog`
   },
   openGraph: {
-    title: "Блог — Артём Лизгаро",
-    description:
-      "Разборы о сайтах, Telegram-ботах, AI, монетизации, Life OS и управлении проектами через фазы.",
+    title: "Блог - Артём Лизгаро",
+    description: "Статьи о сайтах, Telegram-ботах, AI, монетизации, Life OS и создании продуктов.",
     url: `${siteConfig.siteUrl}/blog`,
     type: "website",
     locale: "ru_RU"
@@ -33,12 +32,11 @@ export default function BlogPage() {
         <section className="mx-auto max-w-7xl">
           <p className="font-mono text-xs uppercase text-lime">Blog / SEO / GEO</p>
           <h1 className="mt-5 max-w-5xl font-display text-5xl font-black uppercase leading-[0.9] text-text sm:text-7xl lg:text-8xl">
-            Блог и будущие статьи
+            Блог
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-            Здесь будут разборы о сайтах, Telegram-ботах, AI, монетизации, Life OS и управлении
-            проектами через фазы. Сейчас архитектура готова, но реальные статьи не публикуются без
-            отдельного задания.
+            Здесь будут статьи о сайтах, Telegram-ботах, AI, монетизации, Life OS и создании продуктов. Сейчас
+            архитектура готова, но реальные статьи не публикуются без отдельного подтверждения.
           </p>
         </section>
 
@@ -59,11 +57,11 @@ export default function BlogPage() {
           ) : (
             <div className="rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
               <p className="font-display text-4xl font-black uppercase leading-none text-text sm:text-6xl">
-                Блог скоро появится.
+                Блог готовится.
               </p>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
-                Первый файл в `content/blog` сейчас имеет статус draft. Он нужен как шаблон будущих
-                материалов и не выводится публично.
+                Первый файл в `content/blog` сейчас имеет статус draft. Он нужен как шаблон будущих материалов и не
+                выводится публично.
               </p>
             </div>
           )}

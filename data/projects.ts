@@ -1,17 +1,19 @@
-export type ProjectStatus = "active" | "paused" | "internal" | "research" | "media";
+export type ProjectGroup = "current" | "past";
+export type ProjectStatus = "active" | "system" | "building" | "model" | "tool" | "direction";
 
 export type Project = {
   id: string;
   title: string;
+  group: ProjectGroup;
   status: ProjectStatus;
   statusLabel: string;
   category: string;
   url?: string;
   shortDescription: string;
+  hook?: string;
   problem?: string;
   solution?: string;
   valueForUser?: string;
-  role?: string;
   tags: string[];
   ctaLabel?: string;
   ctaUrl?: string;
@@ -22,129 +24,104 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "mari-nails",
-    title: "Mari Nails / AI Beauty Try-On",
+    title: "Mari Nails",
+    group: "current",
     status: "active",
-    statusLabel: "Активный проект",
-    category: "AI beauty / визуальная примерка / сайт / генерация образов",
+    statusLabel: "Действующий проект",
+    category: "AI beauty / сайт / визуальная примерка",
     url: "https://mari-nails.vercel.app/",
     shortDescription:
-      "AI-сайт для beauty-ниши, где клиент может заранее примерить стиль маникюра, выбрать готовый дизайн или сгенерировать свой вариант.",
-    problem:
-      "Клиенту сложно выбрать дизайн на месте, а мастеру приходится долго уточнять ожидания и визуальные референсы.",
-    solution:
-      "Mari Vision Lab / Mari AI Studio помогает смотреть готовые стили и использовать AI-генерацию до визита.",
+      "AI-сайт для beauty-ниши, где клиент может заранее выбрать или сгенерировать стиль маникюра и прийти к мастеру уже с понятным визуальным референсом.",
     valueForUser:
-      "Клиент приходит к мастеру с понятным визуальным направлением, а мастер быстрее понимает желание клиента.",
-    role: "Упаковка идеи, сайт, AI-виджет, логика сценария и демонстрация beauty-tech направления.",
-    tags: ["AI Beauty", "Nails", "Try-On", "Landing", "Beauty Tech", "AI Widget"],
-    ctaLabel: "Посмотреть Mari Nails",
+      "Клиент экономит время на выборе, а мастер быстрее понимает желание клиента.",
+    tags: ["AI Beauty", "Nails", "Try-On", "AI Widget"],
+    ctaLabel: "Посмотреть проект",
     ctaUrl: "https://mari-nails.vercel.app/",
     secondaryCtaLabel: "Хочу похожий AI-виджет",
     featured: true
   },
   {
-    id: "ambassador-hub",
-    title: "Ambassador Hub",
-    status: "paused",
-    statusLabel: "На паузе",
-    category: "партнёрский рост / инфлюенсеры / revenue share / AI-продукты",
-    url: "https://v0-ambassadorhub.vercel.app/",
-    shortDescription:
-      "Партнёрская growth-модель для AI-продуктов и инфлюенсеров: вместо разовых рекламных постов — совместная монетизация аудитории через продукт, воронку и revenue share.",
-    problem:
-      "У блогера есть аудитория, у продукта есть ценность, но между ними часто нет долгосрочной модели роста.",
-    solution:
-      "Модель соединяет AI-продукт, инфлюенсера, аудиторию и воронку в партнёрскую механику.",
-    valueForUser:
-      "Блогер получает продуктовую роль, продукт получает доверие и доступ к аудитории, аудитория получает полезное решение.",
-    role: "Маркетинговая стратегия, лендинг, партнёрская логика и оффер.",
-    tags: ["Influencer Marketing", "Revenue Share", "AI Products", "Funnels", "Partnerships", "Growth Strategy"],
-    ctaLabel: "Посмотреть Ambassador Hub",
-    ctaUrl: "https://v0-ambassadorhub.vercel.app/"
-  },
-  {
-    id: "knowledge-base",
-    title: "База знаний / Партнёры роста",
-    status: "internal",
-    statusLabel: "На паузе / внутренний проект",
-    category: "knowledge base / партнёрская система / материалы роста",
-    url: "https://baza-znaniy.vercel.app/",
-    shortDescription:
-      "Внутренняя база знаний для партнёров роста: материалы, инструкции, стратегии, расчёты и рабочие процессы, собранные в понятную структуру для команды и коллабораций.",
-    problem: "Партнёрам и команде сложно держать материалы, инструкции и процессы в одном месте.",
-    solution: "Структурированный внутренний сайт с разделами для обучения, экономики, команды, воронок и AI-инструментов.",
-    valueForUser: "Меньше повторных объяснений, быстрее вход в контекст, понятнее рабочие процессы.",
-    role: "Структура базы, информационная архитектура и упаковка материалов.",
-    tags: ["Knowledge Base", "Growth Partners", "Team Materials", "Funnels", "AI Tools", "Operations"],
-    ctaLabel: "Посмотреть базу",
-    ctaUrl: "https://baza-znaniy.vercel.app/"
-  },
-  {
-    id: "cult-scale",
-    title: "Cult Scale / Культура Маркетинга",
-    status: "paused",
-    statusLabel: "На паузе / требует уточнения деталей",
-    category: "комьюнити / партнёрский рост / маркетинг / культура роста",
-    url: "https://cult-scale.vercel.app/",
-    shortDescription:
-      "Проект на стыке комьюнити, партнёрского роста и маркетинговой культуры. Использовался как направление для упаковки идей, роста, коллабораций и системного мышления вокруг маркетинга.",
-    problem: "Идеи вокруг роста, партнёрств и маркетинговой культуры требуют отдельной упаковки и уточнения.",
-    solution: "Пока показывается как paused-направление, а не как основной кейс.",
-    valueForUser: "Можно увидеть направление мышления без ложного позиционирования проекта как завершённого продукта.",
-    role: "Черновая упаковка направления и продуктовой гипотезы.",
-    tags: ["Community", "Marketing Culture", "Growth", "Partnerships", "Paused Project"],
-    ctaLabel: "Посмотреть Cult Scale",
-    ctaUrl: "https://cult-scale.vercel.app/"
-  },
-  {
     id: "life-os",
-    title: "Life OS / Личный AI-мозг",
-    status: "internal",
-    statusLabel: "Активный внутренний проект",
-    category: "AI-система / личный контекст / агенты / Codex / продуктивность",
+    title: "Life OS",
+    group: "current",
+    status: "system",
+    statusLabel: "Моя внутренняя система",
+    category: "AI-система / личный контекст / проекты",
     shortDescription:
-      "Личный AI-мозг и центр управления проектами: система, где собраны контекст, цели, проекты, решения, PRD, AI-агенты и процессы.",
-    problem: "AI часто ошибается не потому, что слабый, а потому что у него нет личного и проектного контекста.",
+      "Система, которая собирает мой контекст, цели, проекты, решения и AI-агентов в одну рабочую базу.",
+    hook:
+      "AI часто ошибается не потому, что слабый, а потому что у него нет твоего контекста.",
+    problem:
+      "У людей много идей, заметок, чатов, задач и проектов, но всё лежит в разных местах. AI каждый раз приходится заново объяснять контекст.",
     solution:
-      "Life OS хранит личность, цели, проекты, решения, агенты, фазы и задачи в структуре, с которой AI может работать как партнёр.",
+      "Life OS собирает личный контекст в понятную структуру: кто я, что строю, какие проекты активны, какие решения приняты, какие агенты нужны и что делать дальше.",
     valueForUser:
-      "Такую логику можно адаптировать для эксперта, фаундера или команды, чтобы AI не начинал каждый раз с нуля.",
-    role: "Архитектура системы, контекстные файлы, агенты, PRD и рабочие протоколы.",
-    tags: ["Life OS", "AI Agents", "Codex", "Context", "Markdown", "Productivity", "Personal System"],
-    ctaLabel: "Хочу собрать свой AI-мозг",
+      "AI быстрее понимает задачу, точнее предлагает решения, помогает вести проекты и превращает хаос идей в конкретные действия.",
+    tags: ["Life OS", "AI Agents", "Context", "Codex"],
+    secondaryCtaLabel: "Хочу собрать свой AI-мозг",
     featured: true
   },
   {
     id: "personal-growth-os",
-    title: "Personal Growth OS / Личная ОС роста",
-    status: "research",
-    statusLabel: "Исследование и проектирование",
-    category: "привычки / мысли / цели / AI-менторы / саморефлексия",
+    title: "Личная ОС роста",
+    group: "current",
+    status: "building",
+    statusLabel: "Продукт в разработке",
+    category: "привычки / мысли / цели / AI-менторы",
     shortDescription:
-      "Личная ОС для привычек, мыслей, целей и осознанного роста: от хаоса во времени, мыслях и распорядке — к ясности, пониманию и действию.",
-    problem: "Людям часто не хватает не информации, а ясности, поддержки и системы маленьких действий.",
-    solution:
-      "Продуктовая концепция соединяет привычки, голосовые заметки, дневник мыслей, AI-менторов, фокус и анализ состояния.",
-    valueForUser: "Человек записывает мысль, понимает себя, выбирает маленький шаг, делает его и видит прогресс.",
-    role: "Исследование, проектирование сценариев, продуктовая упаковка и будущий UX.",
-    tags: ["Personal Growth", "Habits", "AI Mentors", "Voice Notes", "Self-Reflection", "Focus", "Community"]
+      "Минималистичное приложение для привычек, мыслей, целей и саморефлексии. Помогает человеку понять себя, фиксировать мысли голосом, планировать день, отслеживать привычки и превращать знания в действия.",
+    hook:
+      "Информации стало слишком много. Ясности и действия - меньше.",
+    valueForUser:
+      "Не очередной трекер с галочками, а личная операционная система роста: записал мысль, понял себя, выбрал маленький шаг, сделал, увидел прогресс.",
+    tags: ["Personal Growth", "Habits", "AI Mentors", "Focus"],
+    secondaryCtaLabel: "Обсудить продукт"
   },
   {
-    id: "liveos-journal",
-    title: "LiveOS Journal / Фазы и исследования",
-    status: "media",
-    statusLabel: "Активное медиа-направление",
-    category: "блог / фазы дня / исследования / AI-автоматизация контента",
+    id: "ambassador-hub",
+    title: "Ambassador Hub",
+    group: "past",
+    status: "model",
+    statusLabel: "Маркетинговая модель",
+    category: "партнёрский рост / инфлюенсеры / revenue share",
+    url: "https://v0-ambassadorhub.vercel.app/",
     shortDescription:
-      "Медиа-раздел о том, как личные фазы, спорт, сон, исследования, AI-инструменты и работа над проектами превращаются в полезные статьи и короткие посты.",
-    problem: "Личный опыт легко превращается в хаотичный дневник, если не отделять шум дня от полезного вывода.",
-    solution:
-      "Контентная логика: фаза / заметка / голос -> AI-очистка -> вывод -> статья -> короткие посты для соцсетей.",
-    valueForUser: "Читатель видит практические выводы о фокусе, привычках, энергии, продуктивности, контенте и применении AI.",
-    role: "Медиа-направление, контент-пайплайн, будущий блог и SEO/GEO-актив.",
-    tags: ["Фазы", "AI", "Фокус", "Привычки", "Спорт", "Сон", "Исследования", "Контент"],
-    ctaLabel: "Открыть Journal",
-    ctaUrl: "/journal",
-    featured: true
+      "Модель партнёрского роста, где продукт, блогер и аудитория соединяются через воронку и совместную монетизацию.",
+    valueForUser:
+      "У блогера есть аудитория. У продукта есть ценность. Модель показывает, как соединить их не через разовую рекламу, а через партнёрство.",
+    tags: ["Partnerships", "Revenue Share", "Funnels"],
+    ctaLabel: "Посмотреть работу",
+    ctaUrl: "https://v0-ambassadorhub.vercel.app/"
+  },
+  {
+    id: "knowledge-base",
+    title: "База знаний",
+    group: "past",
+    status: "tool",
+    statusLabel: "Внутренний инструмент",
+    category: "knowledge base / материалы / процессы",
+    url: "https://baza-znaniy.vercel.app/",
+    shortDescription:
+      "Внутренняя база материалов для партнёров роста: инструкции, процессы, воронки, AI-инструменты и рабочие материалы в одной структуре.",
+    tags: ["Knowledge Base", "Operations", "AI Tools"],
+    ctaLabel: "Посмотреть работу",
+    ctaUrl: "https://baza-znaniy.vercel.app/"
+  },
+  {
+    id: "cult-scale",
+    title: "Cult Scale",
+    group: "past",
+    status: "direction",
+    statusLabel: "Упаковка направления",
+    category: "маркетинг / партнёрства / комьюнити",
+    url: "https://cult-scale.vercel.app/",
+    shortDescription:
+      "Проектная упаковка направления на стыке маркетинга, партнёрств, комьюнити и системного роста.",
+    tags: ["Growth", "Community", "Partnerships"],
+    ctaLabel: "Посмотреть работу",
+    ctaUrl: "https://cult-scale.vercel.app/"
   }
 ];
+
+export const currentProjects = projects.filter((project) => project.group === "current");
+export const pastProjects = projects.filter((project) => project.group === "past");

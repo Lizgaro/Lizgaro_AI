@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { currentProjects, pastProjects } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { SectionHeading } from "./SectionHeading";
 
@@ -9,14 +9,36 @@ export function Projects() {
         <SectionHeading
           id="projects"
           label="03 / Projects"
-          title="Проекты и работы с честными статусами"
-          description="Активные проекты, внутренние системы, paused-направления и исследования. Без фейковых метрик, клиентов и отзывов."
+          title="Проекты без лишней внутренней кухни"
+          description="Сначала то, что развиваю сейчас. Ниже - работы и упаковки, которые показывают мой подход к сайтам, AI, партнёрствам и системам."
         />
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+        <div className="mt-12">
+          <div className="mb-5 flex items-end justify-between gap-4">
+            <h3 className="font-display text-3xl font-black uppercase leading-none text-text sm:text-4xl">
+              Что развиваю сейчас
+            </h3>
+            <span className="hidden font-mono text-xs uppercase text-lime sm:block">Active layer</span>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-2">
+            {currentProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <div className="mb-5 flex items-end justify-between gap-4">
+            <h3 className="font-display text-3xl font-black uppercase leading-none text-text sm:text-4xl">
+              Что уже делал
+            </h3>
+            <span className="hidden font-mono text-xs uppercase text-muted sm:block">Selected work</span>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {pastProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} compact />
+            ))}
+          </div>
         </div>
       </div>
     </section>

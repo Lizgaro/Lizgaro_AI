@@ -9,15 +9,15 @@ export function About() {
           id="about"
           label="01 / About"
           title={siteConfig.about.title}
-          description="Короткая траектория вместо длинной биографии: практическая среда, AI, маркетинг, продукты и действие."
+          description="Коротко: не усложняю ради системы, а собираю рабочую связку под монетизацию."
         />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[0.82fr_1fr]">
+        <div className="mt-12 grid gap-8 lg:grid-cols-[0.72fr_1fr]">
           <div className="rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
             <p className="font-display text-4xl font-black uppercase leading-none text-lime sm:text-6xl">
               Видеть суть.
               <br />
-              Собирать систему.
+              Собрать первый шаг.
             </p>
             <p className="mt-6 text-lg leading-8 text-muted">{siteConfig.about.signal}</p>
           </div>

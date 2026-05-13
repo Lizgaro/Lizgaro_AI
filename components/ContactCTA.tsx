@@ -11,13 +11,13 @@ export function ContactCTA() {
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-lime/20 bg-lime text-ink">
         <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[1fr_0.45fr] lg:p-14">
           <div>
-            <p className="font-mono text-xs uppercase text-ink/70">10 / Contact</p>
+            <p className="font-mono text-xs uppercase text-ink/70">09 / Contact</p>
             <h2 className="mt-5 max-w-5xl font-display text-5xl font-black uppercase leading-[0.9] sm:text-7xl lg:text-8xl">
-              Есть идея, аудитория, сайт, продукт или хаос в монетизации?
+              Есть идея, продукт или хаос в монетизации?
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/75">
-              Напиши мне в Telegram. Разберём, что усиливать первым: оффер, сайт, бот, воронку,
-              контент, AI-связку или модель заработка.
+              Напиши мне в Telegram. Разберём, что усилить первым: оффер, сайт, бот, контент, воронку или модель
+              заработка.
             </p>
           </div>
 
@@ -32,8 +32,8 @@ export function ContactCTA() {
             <div className="mt-4 rounded-3xl border border-ink/15 bg-ink/5 p-5">
               <p className="font-mono text-xs uppercase text-ink/60">Что написать</p>
               <p className="mt-3 text-sm leading-6 text-ink/70">
-                Коротко опиши идею, текущую точку и что хочешь получить: сайт, бота, воронку,
-                монетизацию аудитории, блог или разбор хаоса.
+                Коротко опиши идею, текущую точку и что хочешь получить: сайт, бота, воронку, монетизацию аудитории,
+                блог или разбор.
               </p>
               {visibleSocials.length ? (
                 <div className="mt-4 flex flex-wrap gap-2">

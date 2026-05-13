@@ -1,9 +1,8 @@
 export const navigation = [
   { label: "Обо мне", href: "/#about" },
-  { label: "Проекты", href: "/#projects" },
   { label: "Услуги", href: "/#services" },
+  { label: "Проекты", href: "/#projects" },
   { label: "Блог", href: "/blog" },
-  { label: "Фазы", href: "/journal" },
   { label: "Контакт", href: "/#contact" }
 ];
 

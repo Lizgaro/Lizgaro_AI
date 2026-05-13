@@ -9,16 +9,16 @@ export function Offers() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           id="offers"
-          label="04 / Offers"
+          label="05 / Formats"
           title="Форматы работы"
-          description="Главный вход — разбор проекта. Если задача понятна, можно перейти к сайту, боту, воронке или AI MVP."
+          description="Без десяти вариантов на выбор. Сначала выбираем самый полезный формат под твою ситуацию."
         />
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
           {offers.map((offer) => (
             <article
               key={offer.title}
-              className="flex min-h-[360px] flex-col justify-between rounded-[2rem] border border-white/10 bg-surface p-5 transition hover:-translate-y-1 hover:border-lime/40 sm:p-6"
+              className="flex min-h-[300px] flex-col justify-between rounded-[2rem] border border-white/10 bg-surface p-5 transition hover:-translate-y-1 hover:border-lime/40 sm:p-6"
             >
               <div>
                 <h3 className="font-display text-3xl font-black uppercase leading-none text-text">{offer.title}</h3>

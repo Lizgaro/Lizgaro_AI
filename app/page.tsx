@@ -5,7 +5,6 @@ import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { JournalSection } from "@/components/JournalSection";
 import { LifeOSSection } from "@/components/LifeOSSection";
 import { Offers } from "@/components/Offers";
 import { Process } from "@/components/Process";
@@ -24,7 +23,6 @@ export default function Home() {
         <Offers />
         <Process />
         <LifeOSSection />
-        <JournalSection />
         <BlogPreview />
         <FAQ />
         <ContactCTA />

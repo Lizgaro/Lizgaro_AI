@@ -38,7 +38,7 @@ export function Header() {
 
         <div className="hidden lg:block">
           <ButtonLink href={siteConfig.fallbackCtaHref} className="min-h-10 px-4 py-2">
-            Разобрать проект
+            Разобрать монетизацию
           </ButtonLink>
         </div>
 
@@ -75,7 +75,7 @@ export function Header() {
               onClick={() => setIsOpen(false)}
               className="mt-2 rounded-2xl bg-lime px-4 py-3 text-center text-sm font-semibold text-ink"
             >
-              Разобрать проект
+              Разобрать монетизацию
             </a>
           </nav>
         </div>
