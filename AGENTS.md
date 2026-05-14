@@ -77,13 +77,20 @@ git commit -m "feat: publish [short article topic] article"
 git push origin main
 ```
 
-8. Если `git push` падает из-за DNS к `github.com`, не меняй код и не делай новый коммит. Сначала повтори push. Если снова падает, попробуй временный Git-обход:
+8. Если `git push` падает из-за DNS к `github.com`, не меняй код и не делай новый коммит. Сначала повтори push. Если снова падает, попробуй `schannel`:
 
 ```powershell
 git -c http.sslBackend=schannel -c http.version=HTTP/1.1 push origin main
 ```
 
-Если и это не помогло — сообщи, что commit готов локально, но push заблокирован DNS/сетью.
+Если DNS всё ещё падает, проверь временный IP GitHub через `curl --resolve`, затем используй `http.curloptResolve` только для одного push:
+
+```powershell
+curl.exe --resolve github.com:443:140.82.112.4 -I https://github.com -m 20
+git -c http.sslBackend=schannel -c http.version=HTTP/1.1 -c http.curloptResolve=github.com:443:140.82.112.4 push origin main
+```
+
+IP GitHub может меняться. Если `140.82.112.4` не отвечает, проверь другой актуальный IP и не сохраняй его в глобальный git config. Если и это не помогло — сообщи, что commit готов локально, но push заблокирован DNS/сетью.
 
 9. Если в проекте подключён Vercel Git integration, обычный `git push origin main` запускает деплой. Не трать время на Vercel CLI, если пользователь не просил отдельный ручной деплой.
 
