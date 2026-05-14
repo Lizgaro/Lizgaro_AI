@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <img
               src={post.ogImage}
               alt={`Обложка статьи: ${post.title}`}
-              className="mt-6 aspect-[1200/630] w-full rounded-[2rem] border border-white/10 object-cover"
+              className="article-cover mt-6 aspect-[1200/630] w-full rounded-[2rem] border border-white/10 object-cover"
             />
           ) : null}
 

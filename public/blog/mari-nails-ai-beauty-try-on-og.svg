@@ -1,38 +1,45 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#0B0D0C"/>
   <path d="M0 0H1200V630H0V0Z" fill="url(#grid)" opacity="0.55"/>
-  <circle cx="960" cy="130" r="220" fill="#B9FF3D" opacity="0.09"/>
-  <circle cx="180" cy="540" r="260" fill="#63FF88" opacity="0.07"/>
+  <circle cx="1020" cy="84" r="245" fill="#B9FF3D" opacity="0.08"/>
+  <circle cx="125" cy="560" r="270" fill="#63FF88" opacity="0.07"/>
   <rect x="70" y="70" width="1060" height="490" rx="46" fill="#111412" stroke="rgba(244,246,240,0.14)" stroke-width="2"/>
-  <rect x="104" y="104" width="180" height="42" rx="21" fill="rgba(185,255,61,0.12)" stroke="#B9FF3D" stroke-opacity="0.45"/>
-  <text x="130" y="132" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">AI BEAUTY</text>
-  <text x="104" y="238" fill="#F4F6F0" font-family="Arial Black, Arial, sans-serif" font-size="86" font-weight="900" letter-spacing="-2">MARI NAILS</text>
-  <text x="108" y="300" fill="#9EA7A0" font-family="Arial, sans-serif" font-size="30">AI site for nail style choice, generation and visual reference</text>
-  <g transform="translate(108 378)">
-    <rect width="174" height="52" rx="26" fill="rgba(244,246,240,0.05)" stroke="rgba(244,246,240,0.16)"/>
-    <text x="31" y="34" fill="#F4F6F0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Choose style</text>
+  <rect x="104" y="104" width="214" height="44" rx="22" fill="rgba(185,255,61,0.12)" stroke="#B9FF3D" stroke-opacity="0.45"/>
+  <text x="132" y="133" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="1.5">AI ДЛЯ BEAUTY / КЕЙС</text>
+  <text x="104" y="232" fill="#F4F6F0" font-family="Arial Black, Arial, sans-serif" font-size="84" font-weight="900" letter-spacing="-1.5">MARI NAILS</text>
+  <text x="108" y="294" fill="#C9D2CA" font-family="Arial, sans-serif" font-size="30">AI-витрина для выбора дизайна</text>
+  <text x="108" y="334" fill="#9EA7A0" font-family="Arial, sans-serif" font-size="28">маникюра до записи</text>
+  <g transform="translate(108 390)">
+    <rect width="170" height="52" rx="26" fill="rgba(244,246,240,0.05)" stroke="rgba(244,246,240,0.16)"/>
+    <text x="29" y="34" fill="#F4F6F0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Выбор стиля</text>
   </g>
-  <path d="M306 404H364" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round"/>
-  <path d="M354 392L366 404L354 416" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(388 378)">
-    <rect width="184" height="52" rx="26" fill="rgba(185,255,61,0.11)" stroke="rgba(185,255,61,0.45)"/>
-    <text x="36" y="34" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="18" font-weight="700">Generate idea</text>
+  <path d="M300 416H358" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M348 404L360 416L348 428" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(382 390)">
+    <rect width="150" height="52" rx="26" fill="rgba(185,255,61,0.12)" stroke="rgba(185,255,61,0.48)"/>
+    <text x="36" y="34" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="18" font-weight="800">AI-идея</text>
   </g>
-  <path d="M596 404H654" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round"/>
-  <path d="M644 392L656 404L644 416" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <g transform="translate(678 378)">
-    <rect width="194" height="52" rx="26" fill="rgba(244,246,240,0.05)" stroke="rgba(244,246,240,0.16)"/>
-    <text x="35" y="34" fill="#F4F6F0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Bring reference</text>
+  <path d="M554 416H612" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M602 404L614 416L602 428" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(636 390)">
+    <rect width="150" height="52" rx="26" fill="rgba(244,246,240,0.05)" stroke="rgba(244,246,240,0.16)"/>
+    <text x="31" y="34" fill="#F4F6F0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Референс</text>
   </g>
-  <g transform="translate(804 128)">
-    <rect x="0" y="0" width="250" height="310" rx="36" fill="#171A18" stroke="rgba(244,246,240,0.14)"/>
-    <path d="M74 237C71 190 84 144 123 101C164 145 176 190 172 237C169 274 78 274 74 237Z" fill="#F4F6F0"/>
-    <path d="M107 146C124 138 146 141 160 157C149 169 130 174 111 168C103 165 100 151 107 146Z" fill="#B9FF3D"/>
-    <path d="M126 109C139 121 150 139 158 157" stroke="#0B0D0C" stroke-width="5" stroke-linecap="round"/>
-    <rect x="44" y="40" width="162" height="36" rx="18" fill="rgba(185,255,61,0.12)"/>
-    <text x="70" y="64" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="14" font-weight="700">VISUAL TRY-ON</text>
+  <path d="M808 416H866" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M856 404L868 416L856 428" stroke="#B9FF3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(890 390)">
+    <rect width="122" height="52" rx="26" fill="rgba(185,255,61,0.12)" stroke="rgba(185,255,61,0.48)"/>
+    <text x="33" y="34" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="18" font-weight="800">Запись</text>
   </g>
-  <text x="104" y="512" fill="#67706A" font-family="Arial, sans-serif" font-size="22">Case draft / SEO-ready / not published until approval</text>
+  <g transform="translate(820 122)">
+    <rect x="0" y="0" width="250" height="235" rx="34" fill="#171A18" stroke="rgba(244,246,240,0.14)"/>
+    <rect x="42" y="38" width="166" height="36" rx="18" fill="rgba(185,255,61,0.12)"/>
+    <text x="56" y="62" fill="#B9FF3D" font-family="Arial, sans-serif" font-size="14" font-weight="800">ВИЗУАЛЬНЫЙ ЛАБ</text>
+    <path d="M83 183C81 151 91 119 124 89C159 120 169 152 166 183C164 209 86 209 83 183Z" fill="#F4F6F0"/>
+    <path d="M112 126C127 119 146 122 157 135C147 146 130 150 114 145C107 143 105 130 112 126Z" fill="#B9FF3D"/>
+    <path d="M127 97C139 109 149 124 156 139" stroke="#0B0D0C" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="104" y="515" fill="#9EA7A0" font-family="Arial, sans-serif" font-size="24">хаос выбора -> понятный визуальный запрос</text>
   <defs>
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" stroke="rgba(244,246,240,0.08)" stroke-width="1"/>
