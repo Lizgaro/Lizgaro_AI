@@ -121,6 +121,7 @@ export function markdownToHtml(markdown: string) {
   const html: string[] = [];
   let listItems: string[] = [];
   let orderedItems: string[] = [];
+  let leadParagraphRendered = false;
 
   function flushList() {
     if (!listItems.length) return;
@@ -137,6 +138,22 @@ export function markdownToHtml(markdown: string) {
   function flushAllLists() {
     flushList();
     flushOrderedList();
+  }
+
+  function renderParagraph(markdownLine: string) {
+    const markerMatch = markdownLine.match(/^\*\*([^*]+):\*\*\s*(.+)$/);
+
+    if (markerMatch) {
+      const [, marker, body] = markerMatch;
+      return `<p class="article-marker"><strong>${renderInline(marker)}:</strong><span>${renderInline(body)}</span></p>`;
+    }
+
+    if (!leadParagraphRendered) {
+      leadParagraphRendered = true;
+      return `<p class="article-lead">${renderInline(markdownLine)}</p>`;
+    }
+
+    return `<p>${renderInline(markdownLine)}</p>`;
   }
 
   for (const line of lines) {
@@ -179,7 +196,7 @@ export function markdownToHtml(markdown: string) {
     } else if (trimmed.startsWith("# ")) {
       html.push(`<h1>${renderInline(trimmed.slice(2))}</h1>`);
     } else {
-      html.push(`<p>${renderInline(trimmed)}</p>`);
+      html.push(renderParagraph(trimmed));
     }
   }
 
