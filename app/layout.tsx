@@ -20,13 +20,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     type: "website",
     locale: "ru_RU",
-    images: ["/icon.svg"]
+    images: [
+      {
+        url: siteConfig.media.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.media.ogAlt
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.seo.title,
     description: siteConfig.seo.description,
-    images: ["/icon.svg"]
+    images: [siteConfig.media.ogImage]
   }
 };
 

@@ -1,8 +1,14 @@
 import { siteConfig } from "@/data/site";
+import { getPublishedPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
 export function GET() {
+  const posts = getPublishedPosts();
+  const postList = posts.length
+    ? posts.map((post) => `- ${post.title}: ${siteConfig.siteUrl}/blog/${post.slug}`).join("\n")
+    : `- Блог готовится: ${siteConfig.siteUrl}/blog`;
+
   const body = `# ${siteConfig.name}
 
 ${siteConfig.seo.description}
@@ -14,6 +20,9 @@ ${siteConfig.seo.description}
 - Блог: ${siteConfig.siteUrl}/blog
 - RSS: ${siteConfig.siteUrl}/rss.xml
 - Sitemap: ${siteConfig.siteUrl}/sitemap.xml
+
+## Опубликованные статьи
+${postList}
 
 ## Темы
 - сайты и лендинги

@@ -21,19 +21,28 @@ export function BlogPreview() {
               <a
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-[2rem] border border-white/10 bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-lime/40 hover:shadow-glow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                className="interactive-card group block overflow-hidden rounded-[2rem] border border-white/10 bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
               >
                 <article>
-                  <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
-                  <h3 className="mt-5 text-2xl font-semibold leading-tight text-text group-hover:text-lime">
-                    {post.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-6 text-muted">{post.description}</p>
-                  <div className="mt-6 flex items-center justify-between gap-4 text-sm font-semibold text-lime">
-                    <span>Открыть статью</span>
-                    <span aria-hidden="true" className="transition group-hover:translate-x-1">
-                      -&gt;
-                    </span>
+                  {post.ogImage ? (
+                    <img
+                      src={post.ogImage}
+                      alt={`Обложка статьи: ${post.title}`}
+                      className="aspect-[1200/630] w-full border-b border-white/10 object-cover"
+                    />
+                  ) : null}
+                  <div className="p-6">
+                    <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
+                    <h3 className="mt-5 text-2xl font-semibold leading-tight text-text transition group-hover:text-lime">
+                      {post.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-6 text-muted">{post.description}</p>
+                    <div className="mt-6 flex items-center justify-between gap-4 text-sm font-semibold text-lime">
+                      <span>Открыть статью</span>
+                      <span aria-hidden="true" className="arrow-shift">
+                        -&gt;
+                      </span>
+                    </div>
                   </div>
                 </article>
               </a>

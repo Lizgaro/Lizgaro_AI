@@ -10,7 +10,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-ink/82 px-3 py-3 shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-4">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between rounded-full border border-white/10 bg-ink/82 px-3 py-3 shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-4">
         <a
           href="/#top"
           className="flex min-w-0 items-center gap-3 rounded-full pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
@@ -29,7 +29,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm text-muted transition hover:bg-white/[0.04] hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className="interactive-link rounded-full px-3.5 py-2 text-sm text-muted hover:bg-white/[0.04] hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime xl:px-4"
             >
               {item.label}
             </a>
@@ -65,7 +65,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-2xl px-4 py-3 text-sm text-text transition hover:bg-white/[0.04]"
+                className="interactive-link rounded-2xl px-4 py-3 text-sm text-text hover:bg-white/[0.04]"
               >
                 {item.label}
               </a>
@@ -73,7 +73,7 @@ export function Header() {
             <a
               href={siteConfig.fallbackCtaHref}
               onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-2xl bg-lime px-4 py-3 text-center text-sm font-semibold text-ink"
+              className="interactive-link mt-2 rounded-2xl bg-lime px-4 py-3 text-center text-sm font-semibold text-ink"
             >
               {siteConfig.hero.ctaPrimary}
             </a>

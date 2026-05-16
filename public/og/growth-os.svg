@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Личная ОС роста</title>
+  <desc id="desc">Обложка продукта про привычки, мысли, цели, AI-менторов и фокус.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0d0c"/>
+      <stop offset="0.56" stop-color="#111412"/>
+      <stop offset="1" stop-color="#1f2a20"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="76%" cy="30%" r="64%">
+      <stop offset="0" stop-color="#b9ff3d" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#0b0d0c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="64" y="58" width="1072" height="514" rx="38" fill="#111412" fill-opacity="0.68" stroke="#f4f6f0" stroke-opacity="0.12"/>
+  <text x="92" y="116" fill="#b9ff3d" font-family="Consolas, monospace" font-size="22" font-weight="700">PERSONAL GROWTH / HABITS / AI MENTORS</text>
+  <text x="90" y="232" fill="#f4f6f0" font-family="Arial Narrow, Arial, sans-serif" font-size="82" font-weight="900">ЛИЧНАЯ ОС</text>
+  <text x="90" y="316" fill="#f4f6f0" font-family="Arial Narrow, Arial, sans-serif" font-size="82" font-weight="900">РОСТА</text>
+  <text x="94" y="382" fill="#9ea7a0" font-family="Arial, sans-serif" font-size="30">Привычки, мысли, цели и фокус без лишнего шума.</text>
+  <g transform="translate(756 134)" font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    <circle cx="160" cy="160" r="132" fill="#b9ff3d" fill-opacity="0.1" stroke="#b9ff3d" stroke-opacity="0.42" stroke-width="3"/>
+    <circle cx="160" cy="160" r="70" fill="#b9ff3d" fill-opacity="0.18" stroke="#b9ff3d" stroke-opacity="0.58" stroke-width="3"/>
+    <circle cx="160" cy="160" r="12" fill="#b9ff3d"/>
+    <text x="116" y="48" fill="#f4f6f0">цели</text>
+    <text x="246" y="166" fill="#f4f6f0">фокус</text>
+    <text x="94" y="304" fill="#f4f6f0">привычки</text>
+    <text x="8" y="166" fill="#f4f6f0">мысли</text>
+  </g>
+  <rect x="92" y="454" width="250" height="58" rx="29" fill="#b9ff3d"/>
+  <text x="124" y="492" fill="#0b0d0c" font-family="Arial, sans-serif" font-size="22" font-weight="800">Следить за продуктом</text>
+</svg>

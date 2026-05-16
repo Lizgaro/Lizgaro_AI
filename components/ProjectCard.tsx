@@ -21,7 +21,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
 
   if (compact) {
     return (
-      <article className="rounded-[1.5rem] border border-white/10 bg-surface p-5 transition duration-300 hover:-translate-y-1 hover:border-lime/30 hover:shadow-glow">
+      <article className="interactive-card rounded-[1.5rem] border border-white/10 bg-surface p-5">
         <div className="flex flex-wrap items-center gap-2">
           <span className={`rounded-full border px-3 py-1 font-mono text-[11px] uppercase ${statusStyles[project.status]}`}>
             {project.statusLabel}
@@ -34,7 +34,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         <p className="mt-4 text-sm leading-6 text-muted">{project.shortDescription}</p>
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
+            <span key={tag} className="interactive-chip rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
               {tag}
             </span>
           ))}
@@ -44,9 +44,9 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
             href={project.ctaUrl}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noreferrer" : undefined}
-            className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-text transition hover:border-lime/50 hover:bg-lime/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+            className="interactive-link group mt-6 inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-text hover:border-lime/50 hover:bg-lime/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
-            {project.ctaLabel}
+            {project.ctaLabel} <span className="arrow-shift ml-2" aria-hidden="true">-&gt;</span>
           </a>
         ) : null}
       </article>
@@ -55,7 +55,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
 
   return (
     <article
-      className={`group relative isolate flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-lime/40 hover:shadow-glow sm:p-8 ${
+      className={`interactive-card group relative isolate flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8 ${
         project.featured ? "lg:col-span-2" : ""
       }`}
     >
@@ -79,7 +79,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
       <div className="mt-7">
         <div className="flex flex-wrap gap-2">
           {project.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
+            <span key={tag} className="interactive-chip rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
               {tag}
             </span>
           ))}
@@ -91,9 +91,9 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
               href={project.ctaUrl}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noreferrer" : undefined}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-text transition hover:border-lime/50 hover:bg-lime/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+              className="interactive-link group inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-text hover:border-lime/50 hover:bg-lime/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
             >
-              {project.ctaLabel}
+              {project.ctaLabel} <span className="arrow-shift ml-2" aria-hidden="true">-&gt;</span>
             </a>
           ) : null}
           <ButtonLink href={siteConfig.fallbackCtaHref} variant={project.ctaUrl ? "ghost" : "secondary"}>

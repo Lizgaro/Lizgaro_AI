@@ -19,7 +19,7 @@ export function Hero() {
               {siteConfig.role}
             </p>
             <h1
-              className="hero-reveal mt-4 max-w-5xl font-display text-[clamp(2.55rem,5.35vw,4.85rem)] font-black uppercase leading-[0.92] tracking-normal text-text"
+              className="hero-reveal mt-4 max-w-[22rem] break-words font-display text-[clamp(1.85rem,8vw,4.85rem)] font-black uppercase leading-[0.98] tracking-normal text-text [text-wrap:wrap] sm:max-w-5xl sm:text-[clamp(2.55rem,5.35vw,4.85rem)] sm:leading-[0.92] sm:[text-wrap:balance]"
               style={{ animationDelay: "120ms" }}
             >
               {siteConfig.hero.title}
@@ -47,13 +47,13 @@ export function Hero() {
           </div>
 
           <aside
-            className="hero-console motion-card hero-reveal rounded-[1.5rem] border border-white/10 bg-surface/80 p-4 shadow-[0_28px_110px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:p-5"
+            className="hero-console motion-card hero-reveal w-full max-w-full rounded-[1.5rem] border border-white/10 bg-surface/80 p-4 shadow-[0_28px_110px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:p-5"
             style={{ animationDelay: "180ms" }}
             aria-label="Маршруты по сайту"
           >
-            <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3 font-mono text-[11px] uppercase text-muted">
+            <div className="flex min-w-0 items-center justify-between gap-4 border-b border-white/10 pb-3 font-mono text-[11px] uppercase text-muted">
               <span>Что здесь найти</span>
-              <span className="text-lime">Live portfolio</span>
+              <span className="shrink-0 text-lime">Live portfolio</span>
             </div>
 
             <div className="mt-1">
@@ -61,7 +61,7 @@ export function Hero() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="group grid grid-cols-[2.35rem_minmax(0,1fr)_1.25rem] gap-3 border-b border-white/10 py-3 transition duration-200 hover:border-lime/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                  className="interactive-link group grid grid-cols-[2.35rem_minmax(0,1fr)_1.25rem] gap-3 border-b border-white/10 py-3 hover:border-lime/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
                 >
                   <span className="font-mono text-xs text-lime">0{index + 1}</span>
                   <span>
@@ -70,7 +70,7 @@ export function Hero() {
                     </span>
                     <span className="mt-1 block text-sm leading-5 text-muted">{item.description}</span>
                   </span>
-                  <span aria-hidden="true" className="text-lime transition group-hover:translate-x-1">
+                  <span aria-hidden="true" className="arrow-shift text-lime">
                     -&gt;
                   </span>
                 </a>
@@ -83,7 +83,7 @@ export function Hero() {
                 {steps.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-lime/20 bg-lime/[0.05] px-3 py-1.5 text-xs text-text"
+                    className="interactive-chip rounded-full border border-lime/20 bg-lime/[0.05] px-3 py-1.5 text-xs text-text"
                   >
                     {item}
                   </span>
@@ -100,9 +100,9 @@ export function Hero() {
           <p>Ниже - услуги, проекты и блог: можно быстро понять, чем я полезен и с какой задачей ко мне приходить.</p>
           <a
             href="#services"
-            className="font-mono text-xs uppercase text-lime transition hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+            className="interactive-link inline-flex font-mono text-xs uppercase text-lime hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
-            Перейти к услугам -&gt;
+            Перейти к услугам <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
           </a>
         </div>
       </div>

@@ -44,11 +44,17 @@ export function ContactCTA() {
                       href={social.href}
                       target={social.href.startsWith("http") ? "_blank" : undefined}
                       rel={social.href.startsWith("http") ? "noreferrer" : undefined}
-                      className="rounded-full border border-ink/20 px-3 py-1 text-sm"
+                      className="interactive-link rounded-full border border-ink/20 px-3 py-1 text-sm hover:border-ink hover:bg-ink/5"
                     >
-                      {social.label}
+                      {social.label} <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
                     </a>
                   ))}
+                  <a href="/blog" className="interactive-link rounded-full border border-ink/20 px-3 py-1 text-sm hover:border-ink hover:bg-ink/5">
+                    Блог <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
+                  </a>
+                  <a href="/rss.xml" className="interactive-link rounded-full border border-ink/20 px-3 py-1 text-sm hover:border-ink hover:bg-ink/5">
+                    RSS <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
+                  </a>
                 </div>
               ) : null}
             </div>

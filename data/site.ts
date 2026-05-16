@@ -4,8 +4,12 @@ export const siteConfig = {
   role: "AI-маркетолог, builder и growth-оператор",
   location: "Владивосток / Россия / СНГ",
   siteUrl: "https://my-workspace-lyart.vercel.app",
-  updatedAt: "2026-05-13",
+  updatedAt: "2026-05-15",
   fallbackCtaHref: "https://t.me/Artem_Liz",
+  media: {
+    ogImage: "/og/artem-lizgaro-home.svg",
+    ogAlt: "Артём Лизгаро: сайты, Telegram-боты, AI-маркетинг, Life OS и рост проектов"
+  },
   contacts: {
     telegram: "https://t.me/Artem_Liz",
     email: "lizgaro13@gmail.com"
@@ -42,6 +46,11 @@ export const siteConfig = {
         title: "Проекты",
         description: "Что строю сейчас и какие связки уже пробовал.",
         href: "#projects"
+      },
+      {
+        title: "Продукты",
+        description: "Life OS, личный AI-мозг и ОС роста.",
+        href: "#life-os"
       },
       {
         title: "Блог",

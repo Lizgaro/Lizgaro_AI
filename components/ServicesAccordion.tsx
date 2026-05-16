@@ -23,7 +23,7 @@ export function ServicesAccordion() {
 
         <div className="mt-8 flex flex-wrap gap-2">
           {secondaryTags.map((tag) => (
-            <span key={tag} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-muted">
+            <span key={tag} className="interactive-chip rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-muted">
               {tag}
             </span>
           ))}
@@ -51,7 +51,7 @@ export function ServicesAccordion() {
                       {service.clientProblem}
                     </span>
                   </span>
-                  <span className="text-2xl text-lime">{isActive ? "-" : "+"}</span>
+                  <span className="text-2xl text-lime transition hover:scale-110">{isActive ? "-" : "+"}</span>
                 </button>
 
                 {isActive ? (
@@ -59,15 +59,15 @@ export function ServicesAccordion() {
                     <div />
                     <div className="grid gap-6">
                       <div className="grid gap-4 lg:grid-cols-3">
-                        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                        <div className="interactive-card rounded-3xl border border-white/10 bg-white/[0.03] p-5">
                           <p className="font-mono text-xs uppercase text-lime">Проблема</p>
                           <p className="mt-3 text-base leading-7 text-muted">{service.clientProblem}</p>
                         </div>
-                        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                        <div className="interactive-card rounded-3xl border border-white/10 bg-white/[0.03] p-5">
                           <p className="font-mono text-xs uppercase text-lime">Что делаю</p>
                           <p className="mt-3 text-base leading-7 text-muted">{service.whatIDo}</p>
                         </div>
-                        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+                        <div className="interactive-card rounded-3xl border border-white/10 bg-white/[0.03] p-5">
                           <p className="font-mono text-xs uppercase text-lime">Результат</p>
                           <p className="mt-3 text-base leading-7 text-muted">{service.result}</p>
                         </div>
@@ -75,7 +75,7 @@ export function ServicesAccordion() {
                       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                         <div className="flex flex-wrap gap-2">
                           {service.tags.map((tag) => (
-                            <span key={tag} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
+                            <span key={tag} className="interactive-chip rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
                               {tag}
                             </span>
                           ))}

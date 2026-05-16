@@ -38,12 +38,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       type: "article",
       locale: "ru_RU",
-      siteName: siteConfig.name
+      siteName: siteConfig.name,
+      images: [
+        {
+          url: project.coverImage,
+          width: 1200,
+          height: 630,
+          alt: project.coverAlt
+        }
+      ]
     },
     twitter: {
       card: "summary_large_image",
       title: project.seoTitle,
-      description: project.seoDescription
+      description: project.seoDescription,
+      images: [project.coverImage]
     }
   };
 }
@@ -55,6 +64,23 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project) {
     notFound();
   }
+
+  const projectUrl = getProjectDetailUrl(project.slug);
+  const imageUrl = new URL(project.coverImage, siteConfig.siteUrl).toString();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    headline: project.title,
+    description: project.seoDescription,
+    image: imageUrl,
+    url: projectUrl,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name
+    },
+    keywords: [...project.why, ...project.inside].join(", ")
+  };
 
   return (
     <>
@@ -72,6 +98,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
 
             <aside className="rounded-[2rem] border border-lime/20 bg-lime/[0.06] p-6 shadow-glow">
+              <img
+                src={project.coverImage}
+                alt={project.coverAlt}
+                className="mb-6 aspect-[1200/630] w-full rounded-[1.35rem] border border-white/10 object-cover"
+              />
               <p className="font-mono text-xs uppercase text-lime">{project.statusLabel}</p>
               <h2 className="mt-4 font-display text-3xl font-black uppercase leading-none text-text">
                 {project.subtitle}
@@ -92,7 +123,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             ["Решение", project.solution],
             ["Польза", project.value]
           ].map(([title, text]) => (
-            <article key={title} className="rounded-[2rem] border border-white/10 bg-surface p-6">
+            <article key={title} className="interactive-card rounded-[2rem] border border-white/10 bg-surface p-6">
               <p className="font-mono text-xs uppercase text-lime">{title}</p>
               <p className="mt-4 text-base leading-7 text-muted">{text}</p>
             </article>
@@ -100,7 +131,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
 
         <section className="mx-auto mt-14 grid max-w-7xl gap-4 lg:grid-cols-[0.8fr_1fr]">
-          <article className="rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
+          <article className="interactive-card rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase text-lime">Простыми словами</p>
             <div className="mt-5 grid gap-4">
               {project.simple.map((item) => (
@@ -111,11 +142,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
           </article>
 
-          <article className="rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
+          <article className="interactive-card rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase text-lime">Зачем я это делаю</p>
             <div className="mt-5 flex flex-wrap gap-2">
               {project.why.map((item) => (
-                <span key={item} className="rounded-full border border-white/10 px-3 py-1.5 text-sm text-muted">
+                <span key={item} className="interactive-chip rounded-full border border-white/10 px-3 py-1.5 text-sm text-muted">
                   {item}
                 </span>
               ))}
@@ -124,18 +155,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </section>
 
         <section className="mx-auto mt-14 grid max-w-7xl gap-4 lg:grid-cols-2">
-          <article className="rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
+          <article className="interactive-card rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase text-lime">Что внутри</p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {project.inside.map((item) => (
-                <li key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-muted">
+                <li key={item} className="interactive-chip rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-muted">
                   {item}
                 </li>
               ))}
             </ul>
           </article>
 
-          <article className="rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
+          <article className="interactive-card rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase text-lime">Для кого это полезно</p>
             <ul className="mt-6 grid gap-3">
               {project.audience.map((item) => (
@@ -157,12 +188,16 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <ButtonLink href={siteConfig.fallbackCtaHref} variant="ink">
                 {project.primaryCta}
               </ButtonLink>
+              <ButtonLink href="/blog" variant="inkGhost">
+                Читать блог
+              </ButtonLink>
               <ButtonLink href="/#projects" variant="inkGhost">
                 Вернуться к проектам
               </ButtonLink>
             </div>
           </div>
         </section>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </main>
       <Footer />
     </>

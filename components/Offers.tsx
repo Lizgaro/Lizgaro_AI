@@ -18,7 +18,7 @@ export function Offers() {
           {offers.map((offer) => (
             <article
               key={offer.title}
-              className="flex min-h-[300px] flex-col justify-between rounded-[2rem] border border-white/10 bg-surface p-5 transition hover:-translate-y-1 hover:border-lime/40 sm:p-6"
+              className="interactive-card flex min-h-[300px] flex-col justify-between rounded-[2rem] border border-white/10 bg-surface p-5 sm:p-6"
             >
               <div>
                 <h3 className="font-display text-3xl font-black uppercase leading-none text-text">{offer.title}</h3>

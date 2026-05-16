@@ -17,6 +17,7 @@ readingTime: "7 мин"
 status: "published"
 seoTitle: "Быстрый дофамин: как вернуть чувствительность к обычной жизни"
 seoDescription: "Почему соцсети, сладкое, короткие видео и другие быстрые стимулы делают обычную жизнь скучной, и как вернуть фокус без крайностей."
+ogImage: "/blog/bystryy-dofamin-kak-vernut-chuvstvitelnost-og.svg"
 canonical: "https://my-workspace-lyart.vercel.app/blog/bystryy-dofamin-kak-vernut-chuvstvitelnost"
 relatedPosts:
   - "kak-vhodit-v-potok-pri-sdvg"

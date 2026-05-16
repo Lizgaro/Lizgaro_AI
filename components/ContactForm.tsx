@@ -100,7 +100,7 @@ export function ContactForm() {
                   key={goal}
                   type="button"
                   onClick={() => toggleGoal(goal)}
-                  className={`rounded-full border px-3 py-2 text-xs font-semibold transition ${
+                  className={`interactive-link rounded-full border px-3 py-2 text-xs font-semibold ${
                     isActive ? "border-ink bg-ink text-text" : "border-ink/15 bg-transparent text-ink/70 hover:border-ink/40"
                   }`}
                 >
@@ -119,7 +119,7 @@ export function ContactForm() {
                 key={option}
                 type="button"
                 onClick={() => setStage(option)}
-                className={`rounded-2xl border px-3 py-3 text-left text-xs font-semibold transition ${
+                className={`interactive-link rounded-2xl border px-3 py-3 text-left text-xs font-semibold ${
                   stage === option ? "border-ink bg-ink text-text" : "border-ink/15 bg-transparent text-ink/70 hover:border-ink/40"
                 }`}
               >
@@ -143,7 +143,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === "loading"}
-        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-ink bg-ink px-5 py-3 text-sm font-semibold text-text transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-60"
+        className="interactive-link mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full border border-ink bg-ink px-5 py-3 text-sm font-semibold text-text hover:bg-surface disabled:cursor-not-allowed disabled:opacity-60"
       >
         {state === "loading" ? "Отправляю..." : "Отправить заявку"}
       </button>

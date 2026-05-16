@@ -2,6 +2,7 @@ export const navigation = [
   { label: "Обо мне", href: "/#about" },
   { label: "Услуги", href: "/#services" },
   { label: "Проекты", href: "/#projects" },
+  { label: "Продукты", href: "/#life-os" },
   { label: "Блог", href: "/blog" },
   { label: "Контакт", href: "/#contact" }
 ];

@@ -22,7 +22,7 @@ export function ButtonLink({ href, children, variant = "primary", className = ""
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${styles[variant]} ${className}`}
+      className={`interactive-link inline-flex min-h-12 items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime ${styles[variant]} ${className}`}
     >
       {children}
     </a>

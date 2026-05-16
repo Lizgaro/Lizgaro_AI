@@ -50,14 +50,31 @@ export default async function TagPage({ params }: PageProps) {
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {posts.length ? (
               posts.map((post) => (
-                <article key={post.slug} className="rounded-[2rem] border border-white/10 bg-surface p-6">
-                  <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
-                  <h2 className="mt-5 text-2xl font-semibold leading-tight text-text">{post.title}</h2>
-                  <p className="mt-4 text-sm leading-6 text-muted">{post.description}</p>
-                  <a href={`/blog/${post.slug}`} className="mt-6 inline-block text-sm font-semibold text-lime">
-                    Читать
-                  </a>
-                </article>
+                <a
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="interactive-card group block overflow-hidden rounded-[2rem] border border-white/10 bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                >
+                  <article>
+                    {post.ogImage ? (
+                      <img
+                        src={post.ogImage}
+                        alt={`Обложка статьи: ${post.title}`}
+                        className="aspect-[1200/630] w-full border-b border-white/10 object-cover"
+                      />
+                    ) : null}
+                    <div className="p-6">
+                      <p className="font-mono text-xs uppercase text-lime">{post.category}</p>
+                      <h2 className="mt-5 text-2xl font-semibold leading-tight text-text transition group-hover:text-lime">
+                        {post.title}
+                      </h2>
+                      <p className="mt-4 text-sm leading-6 text-muted">{post.description}</p>
+                      <p className="mt-6 text-sm font-semibold text-lime">
+                        Читать <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
+                      </p>
+                    </div>
+                  </article>
+                </a>
               ))
             ) : (
               <p className="text-lg leading-8 text-muted">По этому тегу пока нет опубликованных статей.</p>

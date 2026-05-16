@@ -16,6 +16,7 @@ author: "Артём Лизгаро"
 status: "published"
 seoTitle: "Как входить в поток при СДВГ: метод одного контекста"
 seoDescription: "Как направлять быстрое внимание при СДВГ через среду, одну задачу, один промежуток времени и понятный результат."
+ogImage: "/blog/kak-vhodit-v-potok-pri-sdvg-og.svg"
 canonical: "https://my-workspace-lyart.vercel.app/blog/kak-vhodit-v-potok-pri-sdvg"
 relatedPosts:
   - "mari-nails-ai-beauty-try-on-case"

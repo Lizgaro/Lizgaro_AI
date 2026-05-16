@@ -39,13 +39,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       modifiedTime: post.updatedAt || post.date,
       authors: [post.author],
       tags: post.tags,
-      images: post.ogImage ? [post.ogImage] : ["/icon.svg"]
+      images: [
+        {
+          url: post.ogImage || siteConfig.media.ogImage,
+          width: 1200,
+          height: 630,
+          alt: `Обложка статьи: ${post.title}`
+        }
+      ]
     },
     twitter: {
       card: "summary_large_image",
       title: post.seoTitle || post.title,
       description: post.seoDescription || post.description,
-      images: post.ogImage ? [post.ogImage] : ["/icon.svg"]
+      images: [post.ogImage || siteConfig.media.ogImage]
     }
   };
 }
@@ -58,20 +65,41 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const postUrl = `${siteConfig.siteUrl}/blog/${post.slug}`;
+  const imageUrl = new URL(post.ogImage || siteConfig.media.ogImage, siteConfig.siteUrl).toString();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    image: imageUrl,
     datePublished: post.date,
     dateModified: post.updatedAt || post.date,
     author: {
       "@type": "Person",
       name: post.author
     },
-    mainEntityOfPage: `${siteConfig.siteUrl}/blog/${post.slug}`,
+    mainEntityOfPage: postUrl,
     keywords: post.tags.join(", ")
   };
+
+  const nextRoutes = [
+    {
+      title: "Life OS",
+      description: "Как я собираю личный контекст, проекты и AI-агентов в рабочую базу.",
+      href: "/projects/life-os"
+    },
+    {
+      title: "Личная ОС роста",
+      description: "Продукт про привычки, мысли, цели и спокойное движение к результату.",
+      href: "/projects/growth-os"
+    },
+    {
+      title: "Обсудить задачу",
+      description: "Если хочешь разобрать сайт, бота, блог, продукт или воронку.",
+      href: siteConfig.contacts.telegram
+    }
+  ];
 
   return (
     <>
@@ -115,6 +143,29 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="mt-12 rounded-[2rem] border border-white/10 bg-surface/50 p-5 sm:p-8">
             <div className="markdown-content" dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
+
+          <section className="mt-8 rounded-[2rem] border border-white/10 bg-surface p-5 sm:p-6">
+            <p className="font-mono text-xs uppercase text-lime">Дальше по теме</p>
+            <div className="mt-5 grid gap-3 md:grid-cols-3">
+              {nextRoutes.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="interactive-card group rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
+                >
+                  <span className="block text-lg font-semibold text-text transition group-hover:text-lime">
+                    {item.title}
+                  </span>
+                  <span className="mt-3 block text-sm leading-6 text-muted">{item.description}</span>
+                  <span className="mt-4 block text-sm font-semibold text-lime">
+                    Открыть <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
         </article>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </main>

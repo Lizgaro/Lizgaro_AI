@@ -18,6 +18,8 @@ export type ProjectDetail = {
   finalText: string;
   primaryCta: string;
   secondaryCta: string;
+  coverImage: string;
+  coverAlt: string;
   seoTitle: string;
   seoDescription: string;
 };
@@ -69,6 +71,8 @@ export const projectDetails: ProjectDetail[] = [
       "Life OS помогает не просто хранить информацию, а превращать контекст, идеи и решения в действия: планировать, запускать проекты, писать тексты, ставить задачи Codex и не терять фокус.",
     primaryCta: "Хочу собрать свой AI-мозг",
     secondaryCta: "Разобрать Life OS",
+    coverImage: "/og/life-os.svg",
+    coverAlt: "Схема Life OS: личный контекст, проекты, решения и AI-агенты в одной системе",
     seoTitle: "Life OS - личный AI-мозг и система управления проектами",
     seoDescription:
       "Life OS Артёма Лизгаро: личная система контекста, проектов, решений и AI-агентов для работы с ChatGPT, Claude и Codex."
@@ -121,6 +125,8 @@ export const projectDetails: ProjectDetail[] = [
       "Это не очередной трекер с галочками. Это личная операционная система роста: записал мысль, понял себя, выбрал маленький шаг, сделал, увидел прогресс, продолжил.",
     primaryCta: "Подробнее про продукт",
     secondaryCta: "Следить за развитием",
+    coverImage: "/og/growth-os.svg",
+    coverAlt: "Личная ОС роста: привычки, мысли, цели, AI-менторы и фокус в одной системе",
     seoTitle: "Личная ОС роста - приложение для привычек, мыслей и целей",
     seoDescription:
       "Личная ОС роста Артёма Лизгаро: продукт в разработке для привычек, мыслей, целей, саморефлексии, AI-менторов и спокойного движения к результатам."

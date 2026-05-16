@@ -52,6 +52,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(185, 255, 61, 0.04), transparent 18rem),
     var(--background);
@@ -68,6 +69,66 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+.interactive-card {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    color 220ms ease,
+    box-shadow 220ms ease,
+    filter 220ms ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-0.35rem);
+  border-color: rgba(185, 255, 61, 0.38);
+  box-shadow: 0 24px 90px rgba(185, 255, 61, 0.12);
+}
+
+.interactive-link {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.interactive-link:hover {
+  transform: translateY(-0.12rem);
+}
+
+.interactive-chip {
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.interactive-chip:hover {
+  transform: translateY(-0.1rem);
+  border-color: rgba(185, 255, 61, 0.34);
+  background: rgba(185, 255, 61, 0.08);
+  color: var(--text);
+}
+
+.interactive-chip-ink:hover {
+  border-color: rgba(11, 13, 12, 0.34);
+  background: rgba(11, 13, 12, 0.08);
+  color: var(--background);
+}
+
+.arrow-shift {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.group:hover .arrow-shift,
+.interactive-link:hover .arrow-shift {
+  transform: translateX(0.28rem);
 }
 
 ::selection {
@@ -426,5 +487,13 @@ a {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .interactive-card:hover,
+  .interactive-link:hover,
+  .interactive-chip:hover,
+  .group:hover .arrow-shift,
+  .interactive-link:hover .arrow-shift {
+    transform: none;
   }
 }

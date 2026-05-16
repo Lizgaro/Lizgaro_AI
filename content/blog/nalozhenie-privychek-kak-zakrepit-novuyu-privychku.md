@@ -17,6 +17,7 @@ readingTime: "6 мин"
 status: "published"
 seoTitle: "Наложение привычек: как закрепить новую привычку без силы воли"
 seoDescription: "Наложение привычек помогает встроить новое действие в уже знакомый ритм. Простая формула, примеры и ошибки, из-за которых привычка не закрепляется."
+ogImage: "/blog/nalozhenie-privychek-kak-zakrepit-novuyu-privychku-og.svg"
 canonical: "https://my-workspace-lyart.vercel.app/blog/nalozhenie-privychek-kak-zakrepit-novuyu-privychku"
 relatedPosts:
   - "kak-vhodit-v-potok-pri-sdvg"

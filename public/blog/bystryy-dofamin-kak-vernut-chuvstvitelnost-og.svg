@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Быстрый дофамин</title>
+  <desc id="desc">Обложка статьи о быстром дофамине, фокусе и возвращении чувствительности к обычной жизни.</desc>
+  <rect width="1200" height="630" fill="#0b0d0c"/>
+  <circle cx="958" cy="122" r="230" fill="#b9ff3d" fill-opacity="0.18"/>
+  <circle cx="1018" cy="186" r="92" fill="#63ff88" fill-opacity="0.18"/>
+  <rect x="64" y="58" width="1072" height="514" rx="38" fill="#111412" stroke="#f4f6f0" stroke-opacity="0.12"/>
+  <text x="92" y="118" fill="#b9ff3d" font-family="Consolas, monospace" font-size="22" font-weight="700">ФОКУС И ПРИВЫЧКИ</text>
+  <text x="90" y="246" fill="#f4f6f0" font-family="Arial Narrow, Arial, sans-serif" font-size="86" font-weight="900">БЫСТРЫЙ</text>
+  <text x="90" y="334" fill="#f4f6f0" font-family="Arial Narrow, Arial, sans-serif" font-size="86" font-weight="900">ДОФАМИН</text>
+  <text x="94" y="402" fill="#9ea7a0" font-family="Arial, sans-serif" font-size="30">Почему обычная жизнь кажется скучной</text>
+  <text x="94" y="444" fill="#9ea7a0" font-family="Arial, sans-serif" font-size="30">и как вернуть чувствительность без крайностей.</text>
+  <text x="92" y="520" fill="#b9ff3d" font-family="Consolas, monospace" font-size="20">artem-lizgaro / blog</text>
+</svg>
