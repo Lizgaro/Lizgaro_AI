@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/site";
 import { ButtonLink } from "./ButtonLink";
 import { SectionHeading } from "./SectionHeading";
 
-const secondaryTags = ["воронки продаж", "AI-маркетинг", "SEO/GEO", "контент-система", "партнёрские модели"];
+const secondaryTags = ["оффер", "сайт", "бот", "AI-сценарий", "воронка", "заявки"];
 
 export function ServicesAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,9 +16,9 @@ export function ServicesAccordion() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           id="services"
-          label="02 / Services"
-          title="Три понятных входа"
-          description="Если задача пока размыта - начинаем с разбора. Если уже ясно, что нужно, собираем сайт, бота или AI-инструмент."
+          label="02 / Solutions"
+          title="Три задачи, с которыми ко мне приходят"
+          description="Это не каталог услуг. Это три ситуации, где нужно найти разрыв и собрать первый рабочий механизм."
         />
 
         <div className="mt-8 flex flex-wrap gap-2">
@@ -81,7 +81,7 @@ export function ServicesAccordion() {
                           ))}
                         </div>
                         <ButtonLink href={siteConfig.fallbackCtaHref} variant="secondary">
-                          Разобрать задачу
+                          {service.ctaLabel}
                         </ButtonLink>
                       </div>
                     </div>

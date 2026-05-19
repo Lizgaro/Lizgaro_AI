@@ -11,8 +11,8 @@ export function BlogPreview() {
         <SectionHeading
           id="blog"
           label="07 / Blog"
-          title="Блог"
-          description="Статьи о сайтах, Telegram-ботах, AI, монетизации, Life OS и создании продуктов."
+          title="Блог вокруг того, что я строю"
+          description="Блог — не заметки для галочки. Это медиа-слой для SEO/GEO, соцсетей, доверия, будущих продуктов и заявок."
         />
 
         {posts.length ? (

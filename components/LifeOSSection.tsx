@@ -2,7 +2,7 @@ import { siteConfig } from "@/data/site";
 import { ButtonLink } from "./ButtonLink";
 import { SectionHeading } from "./SectionHeading";
 
-const lifeOsItems = ["личный контекст", "цели и проекты", "решения", "AI-агенты", "задачи", "PRD"];
+const lifeOsItems = ["контекст", "проекты", "решения", "AI-агенты", "задачи", "PRD"];
 
 const growthOsItems = [
   "ежедневные привычки",
@@ -18,10 +18,10 @@ export function LifeOSSection() {
     <section className="px-4 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          id="life-os"
-          label="04 / Building now"
-          title="Что я развиваю как систему и продукт"
-          description="Здесь не внутренняя кухня, а два направления, которые объясняют мой способ мышления: личный AI-мозг и продукт для спокойного роста."
+          id="proof"
+          label="06 / Proof of Work"
+          title="Я строю то, о чём говорю"
+          description="AI-виджеты, сайты, партнёрские модели, внутренние системы и продукты — это не теория. Я сам собираю, тестирую, ошибаюсь, улучшаю и переношу рабочие принципы в клиентские задачи."
         />
 
         <div className="mt-12 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
@@ -37,11 +37,11 @@ export function LifeOSSection() {
                 className="mt-6 aspect-[1200/630] w-full rounded-[1.35rem] border border-ink/15 object-cover shadow-[0_24px_90px_rgba(11,13,12,0.18)]"
               />
               <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-ink">
-                AI часто ошибается не потому, что слабый, а потому что у него нет твоего контекста.
+                Life OS — не услуга. Это мой proof of work: как я работаю с контекстом, проектами, решениями и AI.
               </p>
               <p className="mt-5 max-w-3xl text-base leading-7 text-ink/75 sm:text-lg sm:leading-8">
-                Life OS собирает мой контекст, цели, проекты, решения и AI-агентов в одну рабочую базу. Так AI быстрее
-                понимает задачу, точнее предлагает решения и помогает превращать хаос идей в конкретные действия.
+                Система помогает быстрее собирать PRD, тексты, идеи, статьи, задачи и не терять важные мысли. В клиентских
+                задачах я использую эти принципы, но не продаю Life OS как отдельный продукт.
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
                 {lifeOsItems.map((item) => (
@@ -50,11 +50,11 @@ export function LifeOSSection() {
                   </span>
                 ))}
               </div>
-              <ButtonLink href={siteConfig.fallbackCtaHref} variant="ink" className="mt-8">
-                Хочу собрать свой AI-мозг
+              <ButtonLink href="/projects/life-os" variant="ink" className="mt-8">
+                Подробнее про Life OS
               </ButtonLink>
-              <ButtonLink href="/projects/life-os" variant="inkGhost" className="mt-3 sm:ml-3">
-                Подробнее
+              <ButtonLink href={siteConfig.fallbackCtaHref} variant="inkGhost" className="mt-3 sm:ml-3">
+                Разобрать проект
               </ButtonLink>
             </div>
           </article>
@@ -88,14 +88,14 @@ export function LifeOSSection() {
                 Подробнее
               </ButtonLink>
               <ButtonLink href={siteConfig.fallbackCtaHref} variant="ghost">
-                Обсудить продукт
+                Разобрать проект
               </ButtonLink>
             </div>
           </article>
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-3 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 text-sm text-muted">
-          <span className="font-mono text-xs uppercase text-lime">Follow build</span>
+          <span className="font-mono text-xs uppercase text-lime">Build in public</span>
           <a href="/blog" className="interactive-link rounded-full border border-white/10 px-3 py-2 hover:border-lime/40 hover:text-lime">
             Читать блог <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
           </a>

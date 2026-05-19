@@ -9,7 +9,9 @@ import { LifeOSSection } from "@/components/LifeOSSection";
 import { Offers } from "@/components/Offers";
 import { Process } from "@/components/Process";
 import { Projects } from "@/components/Projects";
+import { ScrollMotion } from "@/components/ScrollMotion";
 import { ServicesAccordion } from "@/components/ServicesAccordion";
+import { SocialsSection } from "@/components/SocialsSection";
 import { siteConfig } from "@/data/site";
 
 export default function Home() {
@@ -35,16 +37,18 @@ export default function Home() {
 
   return (
     <>
+      <ScrollMotion />
       <Header />
       <main>
         <Hero />
         <About />
         <ServicesAccordion />
-        <Projects />
         <Offers />
         <Process />
+        <Projects />
         <LifeOSSection />
         <BlogPreview />
+        <SocialsSection />
         <FAQ />
         <ContactCTA />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

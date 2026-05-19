@@ -1,15 +1,21 @@
-# Портфолио Артёма Лизгаро
+# Сайт Артёма Лизгаро
 
 MVP русскоязычного портфолио-сайта в стиле `Dark AI Operator + Neon Lime + Editorial Portfolio`.
 
-Текущая версия усиливает позиционирование вокруг монетизации личного бренда, продукта или бизнеса:
-сайт, Telegram-бот, воронка продаж, AI-маркетинг, контент и SEO/GEO.
+Текущая версия строится только по master PRD:
+
+```txt
+docs/MASTER_PRD_Artem_Lizgaro_final_site_social.md
+```
+
+Главная логика: Артём помогает фаундерам, экспертам и проектам с аудиторией превратить внимание в заявки и деньги через понятный путь к действию.
 
 ## Запуск
 
 Команды одинаково подходят для PowerShell, Command Prompt и Warp.
 
 ```powershell
+cd C:\LA\life-os-v0.3\Lizgaro_site
 npm install
 npm run dev
 ```
@@ -35,21 +41,21 @@ npm run build
 
 Основные тексты вынесены в `data/`:
 
+- `docs/MASTER_PRD_Artem_Lizgaro_final_site_social.md` — главный PRD.
+- `docs/agent_checkpoint.md` — текущий статус работы агента.
 - `data/site.ts` — имя, hero, SEO, контакты, соцсети.
 - `data/navigation.ts` — навигация.
 - `data/services.ts` — услуги.
 - `data/projects.ts` — проекты и честные статусы.
-- `data/skills.ts` — навыки.
 - `data/offers.ts` — форматы работы.
 - `data/faq.ts` — FAQ.
 
-## Блог и Journal
+## Блог
 
 Подготовлена архитектура:
 
 - `content/blog/_draft-example.md` — пример статьи со статусом `draft`.
 - `app/blog` — публичный блог.
-- `app/journal` — LiveOS Journal.
 - `app/sitemap.ts`, `app/robots.ts`, `app/rss.xml/route.ts`, `app/llms.txt/route.ts` — SEO/GEO база.
 
 Важно: статьи со статусом `draft` не выводятся публично.

@@ -9,7 +9,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 max-w-[100vw] px-4 pt-4">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between rounded-full border border-white/10 bg-ink/82 px-3 py-3 shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-4">
         <a
           href="/#top"
@@ -29,7 +29,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="interactive-link rounded-full px-3.5 py-2 text-sm text-muted hover:bg-white/[0.04] hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime xl:px-4"
+              className="interactive-link rounded-full px-2.5 py-2 text-xs text-muted hover:bg-white/[0.04] hover:text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime xl:px-4 xl:text-sm"
             >
               {item.label}
             </a>
@@ -44,7 +44,7 @@ export function Header() {
 
         <button
           type="button"
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-text transition hover:border-lime/40 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime lg:hidden"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 text-text transition hover:border-lime/40 hover:text-lime focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime lg:hidden"
           aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((value) => !value)}

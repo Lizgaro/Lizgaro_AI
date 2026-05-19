@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Project } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import { ButtonLink } from "./ButtonLink";
@@ -14,14 +15,21 @@ const statusStyles: Record<Project["status"], string> = {
 type ProjectCardProps = {
   project: Project;
   compact?: boolean;
+  revealIndex?: number;
 };
 
-export function ProjectCard({ project, compact = false }: ProjectCardProps) {
+export function ProjectCard({ project, compact = false, revealIndex = 0 }: ProjectCardProps) {
   const isExternal = project.ctaUrl?.startsWith("http");
+  const revealStyle = { "--reveal-delay": `${Math.min(revealIndex * 70, 360)}ms` } as CSSProperties;
 
   if (compact) {
     return (
-      <article className="interactive-card rounded-[1.5rem] border border-white/10 bg-surface p-5">
+      <article
+        data-motion-reveal
+        data-tilt-card
+        style={revealStyle}
+        className="interactive-card motion-reveal tilt-card rounded-[1.5rem] border border-white/10 bg-surface p-5"
+      >
         <div className="flex flex-wrap items-center gap-2">
           <span className={`rounded-full border px-3 py-1 font-mono text-[11px] uppercase ${statusStyles[project.status]}`}>
             {project.statusLabel}
@@ -31,7 +39,24 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         <h3 className="mt-5 font-display text-2xl font-black uppercase leading-none text-text sm:text-3xl">
           {project.title}
         </h3>
-        <p className="mt-4 text-sm leading-6 text-muted">{project.shortDescription}</p>
+        <div className="mt-5 grid gap-4 text-sm leading-6 text-muted">
+          <p>
+            <span className="font-semibold text-lime">Ситуация: </span>
+            {project.problem || project.shortDescription}
+          </p>
+          {project.solution ? (
+            <p>
+              <span className="font-semibold text-lime">Что сделал: </span>
+              {project.solution}
+            </p>
+          ) : null}
+          {project.valueForUser ? (
+            <p>
+              <span className="font-semibold text-lime">Смысл: </span>
+              {project.valueForUser}
+            </p>
+          ) : null}
+        </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tags.slice(0, 3).map((tag) => (
             <span key={tag} className="interactive-chip rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
@@ -55,7 +80,10 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
 
   return (
     <article
-      className={`interactive-card group relative isolate flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8 ${
+      data-motion-reveal
+      data-tilt-card
+      style={revealStyle}
+      className={`interactive-card motion-reveal tilt-card group relative isolate flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-6 sm:p-8 ${
         project.featured ? "lg:col-span-2" : ""
       }`}
     >

@@ -12,13 +12,12 @@ export function ContactCTA() {
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-lime/20 bg-lime text-ink">
         <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[0.9fr_0.72fr] lg:p-14">
           <div>
-            <p className="font-mono text-xs uppercase text-ink/70">09 / Contact</p>
+            <p className="font-mono text-xs uppercase text-ink/70">11 / Contact</p>
             <h2 className="mt-5 max-w-5xl font-display text-5xl font-black uppercase leading-[0.9] sm:text-7xl lg:text-8xl">
-              Есть идея, продукт или хаос в монетизации?
+              Покажите проект. Я скажу, где теряется движение.
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/75">
-              Заполни короткую анкету или напиши напрямую. Разберём, что усилить первым: оффер, сайт, бот, контент,
-              воронку или модель заработка.
+              Чтобы держать качество и нормально погружаться в каждый проект, я беру в личную работу не больше 3-4 проектов в месяц. Напишите коротко: что есть сейчас, где затык и какой результат нужен.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -33,8 +32,7 @@ export function ContactCTA() {
             <div className="mt-6 rounded-3xl border border-ink/15 bg-ink/5 p-5">
               <p className="font-mono text-xs uppercase text-ink/60">Что написать</p>
               <p className="mt-3 text-sm leading-6 text-ink/70">
-                Коротко опиши идею, текущую точку и что хочешь получить: сайт, бота, воронку, монетизацию аудитории,
-                блог или разбор.
+                Без длинного ТЗ. Сначала быстро понимаем задачу, потом выбираем ближайший рабочий шаг, который можно запустить уже на этой неделе.
               </p>
               {visibleSocials.length ? (
                 <div className="mt-4 flex flex-wrap gap-2">

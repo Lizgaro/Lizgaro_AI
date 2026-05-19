@@ -12,9 +12,9 @@ export function FAQ() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           id="faq"
-          label="08 / FAQ"
+          label="10 / FAQ"
           title="Вопросы перед первым разговором"
-          description="Коротко снимаю основные сомнения: с чем приходить, что будет на выходе и почему сайт - только часть системы."
+          description="Коротко снимаю основные сомнения: с чем приходить, что будет на выходе и почему сайт — только один из инструментов."
         />
 
         <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/10 bg-surface">

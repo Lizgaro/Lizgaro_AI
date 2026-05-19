@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `#${decodedTag} — Блог Артёма Лизгаро`,
-    description: `Материалы по тегу ${decodedTag}: AI, сайты, боты, монетизация, Life OS и контент-системы.`,
+    description: `Материалы по тегу ${decodedTag}: AI, сайты, боты, заявки, Life OS и блог как медиа-слой.`,
     alternates: {
       canonical: `${siteConfig.siteUrl}/tags/${encodeURIComponent(decodedTag)}`
     }

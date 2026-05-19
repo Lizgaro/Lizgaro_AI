@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     icon: "/icon.svg"
   },
   openGraph: {
-    title: siteConfig.seo.title,
-    description: siteConfig.seo.description,
+    title: siteConfig.seo.ogTitle,
+    description: siteConfig.seo.ogDescription,
     url: siteConfig.siteUrl,
     siteName: siteConfig.name,
     type: "website",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.seo.title,
-    description: siteConfig.seo.description,
+    title: siteConfig.seo.ogTitle,
+    description: siteConfig.seo.ogDescription,
     images: [siteConfig.media.ogImage]
   }
 };

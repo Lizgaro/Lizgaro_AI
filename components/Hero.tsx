@@ -6,9 +6,11 @@ export function Hero() {
   const entryPoints = siteConfig.hero.entryPoints;
 
   return (
-    <section id="top" className="relative isolate overflow-hidden px-4 pb-6 pt-24 sm:pt-28 lg:pt-28">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(244,246,240,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(244,246,240,0.032)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(125deg,rgba(185,255,61,0.11),transparent_34%,rgba(99,255,136,0.055)_68%,transparent)]" />
+    <section id="top" className="hero-stage relative isolate max-w-[100vw] overflow-hidden px-4 pb-6 pt-24 sm:pt-28 lg:pt-28">
+      <div className="hero-depth-grid absolute inset-0 -z-10 bg-[linear-gradient(rgba(244,246,240,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(244,246,240,0.032)_1px,transparent_1px)] bg-[size:72px_72px]" />
+      <div className="hero-depth-glow absolute inset-0 -z-10 bg-[linear-gradient(125deg,rgba(185,255,61,0.11),transparent_34%,rgba(99,255,136,0.055)_68%,transparent)]" />
+      <div className="hero-orbit hero-orbit-a" />
+      <div className="hero-orbit hero-orbit-b" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 border-t border-white/[0.03] bg-gradient-to-t from-ink via-ink/72 to-transparent" />
 
       <div className="mx-auto flex min-h-[calc(100svh-6.5rem)] max-w-7xl flex-col justify-center gap-5">
@@ -25,19 +27,23 @@ export function Hero() {
               {siteConfig.hero.title}
             </h1>
             <p
-              className="hero-reveal mt-5 max-w-3xl text-base leading-7 text-muted sm:text-lg sm:leading-8"
+              className="hero-reveal mt-5 max-w-3xl break-words text-base leading-7 text-muted sm:text-lg sm:leading-8"
               style={{ animationDelay: "180ms" }}
             >
               {siteConfig.hero.description}
             </p>
 
+            <p
+              className="hero-reveal mt-5 max-w-3xl text-base font-semibold leading-7 text-text sm:text-lg"
+              style={{ animationDelay: "220ms" }}
+            >
+              Сайт, бот и AI — не цель. Цель — чтобы человек понял ценность, доверился и дошёл до заявки.
+            </p>
+
             <div className="hero-reveal mt-7 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "240ms" }}>
               <ButtonLink href={siteConfig.fallbackCtaHref}>{siteConfig.hero.ctaPrimary}</ButtonLink>
-              <ButtonLink href="#projects" variant="secondary">
+              <ButtonLink href="#process" variant="secondary">
                 {siteConfig.hero.ctaSecondary}
-              </ButtonLink>
-              <ButtonLink href="/blog" variant="ghost">
-                Читать блог
               </ButtonLink>
             </div>
 
@@ -47,13 +53,14 @@ export function Hero() {
           </div>
 
           <aside
-            className="hero-console motion-card hero-reveal w-full max-w-full rounded-[1.5rem] border border-white/10 bg-surface/80 p-4 shadow-[0_28px_110px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:p-5"
+            data-tilt-card
+            className="hero-console motion-card hero-reveal w-full max-w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-surface/80 p-4 shadow-[0_28px_110px_rgba(0,0,0,0.38)] backdrop-blur-xl sm:p-5"
             style={{ animationDelay: "180ms" }}
-            aria-label="Маршруты по сайту"
+            aria-label="Маршрут от внимания к заявке"
           >
             <div className="flex min-w-0 items-center justify-between gap-4 border-b border-white/10 pb-3 font-mono text-[11px] uppercase text-muted">
-              <span>Что здесь найти</span>
-              <span className="shrink-0 text-lime">Live portfolio</span>
+              <span>Маршрут проекта</span>
+              <span className="shrink-0 text-lime">Project route</span>
             </div>
 
             <div className="mt-1">
@@ -78,7 +85,7 @@ export function Hero() {
             </div>
 
             <div className="mt-4">
-              <p className="font-mono text-[11px] uppercase text-muted">Как обычно собираю систему</p>
+              <p className="font-mono text-[11px] uppercase text-muted">Формула сайта</p>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {steps.map((item) => (
                   <span
@@ -97,12 +104,12 @@ export function Hero() {
           className="hero-reveal grid gap-3 border-t border-white/10 pt-4 text-sm text-muted sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
           style={{ animationDelay: "420ms" }}
         >
-          <p>Ниже - услуги, проекты и блог: можно быстро понять, чем я полезен и с какой задачей ко мне приходить.</p>
+          <p>Ниже — диагностика, три типовые задачи, кейсы, proof of work и точка входа на разбор проекта.</p>
           <a
-            href="#services"
+            href="#diagnosis"
             className="interactive-link inline-flex font-mono text-xs uppercase text-lime hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime"
           >
-            Перейти к услугам <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
+            Начать с диагноза <span className="arrow-shift ml-1" aria-hidden="true">-&gt;</span>
           </a>
         </div>
       </div>

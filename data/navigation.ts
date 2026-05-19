@@ -1,9 +1,11 @@
 export const navigation = [
-  { label: "Обо мне", href: "/#about" },
-  { label: "Услуги", href: "/#services" },
-  { label: "Проекты", href: "/#projects" },
-  { label: "Продукты", href: "/#life-os" },
+  { label: "Подход", href: "/#diagnosis" },
+  { label: "Решения", href: "/#solutions" },
+  { label: "Кейсы", href: "/#cases" },
+  { label: "Процесс", href: "/#process" },
+  { label: "Проекты", href: "/#proof" },
   { label: "Блог", href: "/blog" },
+  { label: "Соцсети", href: "/#socials" },
   { label: "Контакт", href: "/#contact" }
 ];
 

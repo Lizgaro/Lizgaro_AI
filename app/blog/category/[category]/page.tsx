@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${decodedCategory} — Блог Артёма Лизгаро`,
-    description: `Статьи в категории ${decodedCategory}: сайты, боты, AI, монетизация, Life OS и контент-системы.`,
+    description: `Статьи в категории ${decodedCategory}: сайты, боты, AI, заявки, Life OS и блог как медиа-слой.`,
     alternates: {
       canonical: `${siteConfig.siteUrl}/blog/category/${encodeURIComponent(decodedCategory)}`
     }

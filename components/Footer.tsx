@@ -13,7 +13,8 @@ export function Footer() {
 
         <nav className="flex flex-wrap gap-3" aria-label="Быстрые ссылки">
           {[
-            ["Продукты", "/#life-os"],
+            ["Проекты", "/#proof"],
+            ["Соцсети", "/#socials"],
             ["Блог", "/blog"],
             ["RSS", "/rss.xml"],
             ["Контакт", "/#contact"]
